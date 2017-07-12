@@ -1,0 +1,16 @@
+$(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/gws-mk-IOC
+
+cd ${INSTALL}
+
+## Register all support components
+dbLoadDatabase("dbd/gws-mk-IOC.dbd")
+gws_mk_IOC_registerRecordDeviceDriver(pdbbase)
+
+## Load record instances
+#dbLoadTemplate("db/gws-mk-IOC.substitutions")
+#dbLoadRecords("db/gws-mk-IOC.db", "user=rcardene")
+
+iocInit
+
+## Start any sequence programs
+#seq(sncxxx, "user=rcardene")
