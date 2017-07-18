@@ -1,0 +1,14 @@
+[symbol2]
+bbox -304 -48 96 352
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+a 0 -111 145 17 1 360
+l 100 0 0 -218 80 in this schematic.
+l 100 0 0 -234 112 used to drive records
+l 100 0 0 -242 144 to indicate that SNL is 
+l 100 0 0 -224 176 This is just a note
+l 200 0 0 -143 225 SNL
+[comments]

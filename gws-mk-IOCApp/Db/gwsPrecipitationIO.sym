@@ -1,0 +1,23 @@
+[symbol2]
+bbox -224 -32 128 224
+port 72 2 100 0 FLNK symbol 2 128 0 0
+port -224 6 100 0 SLNK symbol 1 -224 0 0
+uniq 0
+[tools]
+[attributes]
+p -160 -53 100 0 1 setd:dev $(dev):$(dev)
+p -160 -79 100 0 1 setov:oval enabled
+p -160 -105 100 0 1 setzv:ozal disabled
+[layers]
+<symbol>
+l 100 0 0 -112 128 Precipiation
+l 100 0 0 -80 96 Sensors
+l 100 0 0 -60 64 x4
+r 0 -160 -32 64 224
+v 0 64 0
+128 0
+_
+v 0 -224 0
+-160 0
+_
+[comments]

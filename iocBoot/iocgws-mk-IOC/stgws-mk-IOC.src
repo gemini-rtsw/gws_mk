@@ -1,16 +1,41 @@
-$(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/gws-mk-IOC
+$(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/gws-mk-ioc
 
 cd ${INSTALL}
+epicsEnvSet("IOCSH_PS1","gws-mk-ioc> ")
+
 
 ## Register all support components
 dbLoadDatabase("dbd/gws-mk-IOC.dbd")
 gws_mk_IOC_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
-#dbLoadTemplate("db/gws-mk-IOC.substitutions")
-#dbLoadRecords("db/gws-mk-IOC.db", "user=rcardene")
+dbLoadRecords("db/iocAdminSoft.db"," IOC=ws:iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
+
+
+# These were for testing with the socketservers
+
+drvAsynIPPortConfigure("QM", "172.17.5.19:10004")             
+drvAsynIPPortConfigure("DGHT", "172.17.5.46:3307")            
+drvAsynIPPortConfigure("YNGA", "172.17.5.46:3306")           
+drvAsynIPPortConfigure("VDL", "172.17.53.235:50000")        
+drvAsynIPPortConfigure("VHS", "172.17.56.10:23")        
+drvAsynIPPortConfigure("PLB", "172.17.5.47:3303")          
+drvAsynIPPortConfigure("PLT", "172.17.5.47:3302")         
+#drvAsynIPPortConfigure("PARTMON", "0.0.0.0:0000")        
+drvAsynIPPortConfigure("CFHT", "128.171.83.145:8912 HTTP") 
+drvAsynIPPortConfigure("UKIRT", "128.171.90.101:80 HTTP") 
+drvAsynIPPortConfigure("SEEMON", "172.17.2.157:80 HTTP") 
+
+epicsEnvSet ("STREAM_PROTOCOL_PATH", "./db")
+
+dbLoadRecords("db/gwsTop.db", "top=ws:,ADDR=0,SCAN=10 second")
+dbLoadRecords("db/gwsSadTop.db", "top=ws:")
+
+initSetParameters ("./data/gwsInitMK.pv", "top=ws:")
 
 iocInit
 
 ## Start any sequence programs
-#seq(sncxxx, "user=rcardene")
+#seq(sncxxx, "user=mrippa")
+
+pvload "data/gwsInitMK.pv","top=ws:"

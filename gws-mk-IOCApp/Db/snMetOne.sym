@@ -1,0 +1,27 @@
+[symbol2]
+bbox -224 -32 128 224
+port 72 2 100 0 FLNK symbol 2 128 0 0
+port -224 6 100 0 SLNK symbol 1 -224 0 0
+uniq 0
+[tools]
+[attributes]
+p 32 -64 100 0 1 setct:ct \r
+p -256 -160 100 0 1 setd:dev $(dev)mdm
+p -256 -64 100 0 1 setd1:d1 $(mdm01)
+p -256 -96 100 0 1 seten:evn $(mdmevn01)
+p -256 -128 100 0 1 setev:evv $(mdmevv01)
+p -256 -192 100 0 1 setn:nmax 150
+p 32 -96 100 0 1 setrsp:rsp *
+[layers]
+<symbol>
+l 100 0 0 -83 128 MetOne
+l 100 0 0 -128 96 Input / Output
+l 100 0 0 -60 64 x1
+r 0 -160 -32 64 224
+v 0 64 0
+128 0
+_
+v 0 -224 0
+-160 0
+_
+[comments]

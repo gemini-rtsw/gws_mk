@@ -1,0 +1,28 @@
+[symbol2]
+bbox -224 -32 128 224
+port -224 6 100 0 SLNK symbol 1 -224 0 0
+port 72 2 100 0 FLNK symbol 2 128 0 0
+uniq 0
+[tools]
+[attributes]
+p 0 -64 100 0 1 seta1:a1 $(yngaNN)
+p -224 -128 100 0 1 setd:dev $(dev)yng
+p -224 -64 100 0 1 setd1:d1 $(yngNN)
+p 0 -96 100 0 1 setda1:da1 $(yngdNN)
+p -224 -160 100 0 1 seten:evn $(yngevnNN)
+p -224 -192 100 0 1 setev:evv $(yngevvNN)
+p -224 -96 100 0 1 setn:nmax 200
+[layers]
+<symbol>
+l 100 0 0 -62 42 x1
+l 100 0 0 -131 72 Input / Output
+l 100 0 0 -79 138 Young
+l 100 0 0 -104 106 Anemometer
+r 0 -160 -32 64 224
+v 0 -224 0
+-160 0
+_
+v 0 64 0
+128 0
+_
+[comments]

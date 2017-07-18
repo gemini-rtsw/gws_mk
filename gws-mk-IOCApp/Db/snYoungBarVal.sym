@@ -1,0 +1,34 @@
+[symbol2]
+bbox -256 0 96 448
+port -245 99 100 0 ERR symbol 1 -256 96 0
+port -248 34 100 0 SLNK symbol 1 -256 32 0
+port 40 34 100 0 FLNK symbol 2 96 32 0
+port -246 419 100 0 P symbol 1 -256 416 0
+port -246 131 100 0 HLTH symbol 1 -256 128 0
+uniq 14
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -133 259 Barometric
+l 100 0 0 -160 194 Values & Health
+l 100 0 0 -107 291 Young
+l 100 0 0 -80 144 x1
+l 100 0 0 -160 224 Pressure Sensor
+r 0 -192 0 32 448
+v 0 -256 96
+-192 96
+_
+v 0 -256 32
+-192 32
+_
+v 0 32 32
+96 32
+_
+v 0 -256 416
+-192 416
+_
+v 0 -256 128
+-192 128
+_
+[comments]

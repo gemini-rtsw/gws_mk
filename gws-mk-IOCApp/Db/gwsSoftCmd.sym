@@ -1,0 +1,11 @@
+[symbol2]
+bbox -256 32 -32 224
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -192 144 Software
+l 100 0 0 -192 112 Commands
+r 0 -256 32 -32 224
+[comments]

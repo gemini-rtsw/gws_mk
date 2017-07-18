@@ -1,0 +1,35 @@
+[symbol2]
+bbox -192 0 32 224
+port -180 36 100 0 SLNK symbol 1 -192 32 0
+port -20 36 100 0 FLNK symbol 2 32 32 0
+port -22 195 100 0 NONE symbol 2 32 192 0
+port -21 132 100 0 FAST symbol 2 32 128 0
+port -20 100 100 0 FULL symbol 2 32 96 0
+port -20 163 100 0 VSM symbol 2 32 160 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 50 0 0 -89 104 Mask
+l 50 0 0 -105 122 Simulation
+r 0 -128 0 -32 224
+v 0 -128 32
+-192 32
+_
+v 0 -32 32
+32 32
+_
+v 0 -32 192
+32 192
+_
+v 0 -32 128
+32 128
+_
+v 0 -32 96
+32 96
+_
+v 0 -32 160
+32 160
+_
+[comments]

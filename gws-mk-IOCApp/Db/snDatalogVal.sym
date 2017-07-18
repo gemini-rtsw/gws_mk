@@ -1,0 +1,76 @@
+[symbol2]
+bbox -256 -96 96 464
+port -247 67 100 0 FOG symbol 1 -256 64 0
+port -249 354 100 0 PRES symbol 1 -256 352 0
+port -247 99 100 0 ICE symbol 1 -256 96 0
+port -248 -62 100 0 SLNK symbol 1 -256 -64 0
+port 40 98 100 0 FLNK symbol 2 96 96 0
+port -246 419 100 0 DATE symbol 1 -256 416 0
+port -247 386 100 0 TIME symbol 1 -256 384 0
+port -252 323 100 0 TEMP1 symbol 1 -256 320 0
+port -246 291 100 0 RH1 symbol 1 -256 288 0
+port -253 226 100 0 TEMP2 symbol 1 -256 224 0
+port -249 194 100 0 RH2 symbol 1 -256 192 0
+port -250 130 100 0 SNOW symbol 1 -256 128 0
+port -246 35 100 0 HLTH symbol 1 -256 32 0
+port -246 3 100 0 ERR symbol 1 -256 0 0
+port -248 259 100 0 DEW1 symbol 1 -256 256 0
+port -247 163 100 0 DEW2 symbol 1 -256 160 0
+uniq 8
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -165 251 Values & Health
+l 100 0 0 -117 297 Datalogger
+l 100 0 0 -85 201 x1
+r 0 -192 -96 32 464
+v 0 -256 64
+-192 64
+_
+v 0 -256 352
+-192 352
+_
+v 0 -256 96
+-192 96
+_
+v 0 -256 -64
+-192 -64
+_
+v 0 32 96
+96 96
+_
+v 0 -256 416
+-192 416
+_
+v 0 -256 384
+-192 384
+_
+v 0 -256 320
+-192 320
+_
+v 0 -256 288
+-192 288
+_
+v 0 -256 224
+-192 224
+_
+v 0 -256 192
+-192 192
+_
+v 0 -256 128
+-192 128
+_
+v 0 -256 32
+-192 32
+_
+v 0 -256 0
+-192 0
+_
+v 0 -256 256
+-192 256
+_
+v 0 -256 160
+-192 160
+_
+[comments]

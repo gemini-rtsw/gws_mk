@@ -1,0 +1,23 @@
+[symbol2]
+bbox -256 32 -32 192
+port -109 155 100 0 stat symbol 2 -32 160 0
+port -110 125 100 0 mess symbol 2 -32 128 0
+port -111 59 100 0 flnk symbol 2 -32 64 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -224 96 Commands
+l 100 0 0 -224 128 Software
+r 0 -256 32 -64 192
+v 0 -64 160
+-32 160
+_
+v 0 -64 128
+-32 128
+_
+v 0 -64 64
+-32 64
+_
+[comments]

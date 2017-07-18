@@ -1,0 +1,40 @@
+[symbol2]
+bbox -259 -224 99 320
+port -246 164 100 0 VAL5 symbol 1 -256 160 0
+port -246 195 100 0 VAL4 symbol 1 -256 192 0
+port -247 226 100 0 VAL3 symbol 1 -256 224 0
+port -247 258 100 0 VAL2 symbol 1 -256 256 0
+port -246 291 100 0 VAL1 symbol 1 -256 288 0
+port 40 -190 100 0 FLNK symbol 2 96 -192 0
+port -248 -190 100 0 SLNK symbol 1 -256 -192 0
+uniq 27
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -93 162 DGH
+l 100 0 0 -169 114 Values & Health
+l 100 0 0 -89 64 x5
+r 0 -192 -224 32 320
+v 0 -256 160
+-192 160
+_
+v 0 -256 192
+-192 192
+_
+v 0 -256 224
+-192 224
+_
+v 0 -256 256
+-192 256
+_
+v 0 -256 288
+-192 288
+_
+v 0 32 -192
+96 -192
+_
+v 0 -256 -192
+-192 -192
+_
+[comments]

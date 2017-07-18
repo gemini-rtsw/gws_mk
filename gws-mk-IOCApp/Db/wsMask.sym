@@ -1,0 +1,36 @@
+[symbol2]
+bbox -192 32 32 224
+port -29 163 100 0 SOAR symbol 2 32 160 0
+port -30 131 100 0 CTIO symbol 2 32 128 0
+port -30 66 100 0 UKIRT symbol 2 32 64 0
+port -30 100 100 0 CFHT symbol 2 32 96 0
+port -30 194 100 0 PACHON symbol 2 32 192 0
+port -180 164 100 0 SLNK symbol 1 -192 160 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 50 0 0 -97 126 Station
+l 50 0 0 -96 143 Weather
+l 50 0 0 -90 110 Mask
+r 0 -128 32 -32 224
+v 0 32 160
+-32 160
+_
+v 0 -32 128
+32 128
+_
+v 0 -32 64
+32 64
+_
+v 0 -32 96
+32 96
+_
+v 0 -32 192
+32 192
+_
+v 0 -128 160
+-192 160
+_
+[comments]

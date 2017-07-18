@@ -1,0 +1,16 @@
+[symbol2]
+bbox -96 192 32 256
+port -80 229 100 0 SLNK symbol 1 -96 224 0
+uniq 0
+[tools]
+[attributes]
+p -91 172 100 0 1 setd:sys
+[layers]
+<symbol>
+l 50 0 0 -11 215 Level
+l 50 0 0 -14 227 Debug
+r 0 -32 192 32 256
+v 0 -96 224
+-32 224
+_
+[comments]

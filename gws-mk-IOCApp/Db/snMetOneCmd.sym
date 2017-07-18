@@ -1,0 +1,25 @@
+[symbol2]
+bbox -320 32 -32 192
+port -109 155 100 0 stat symbol 2 -32 160 0
+port -110 125 100 0 mess symbol 2 -32 128 0
+port -111 59 100 0 flnk symbol 2 -32 64 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -288 64 Command
+l 100 0 0 -288 160 MetOne
+l 100 0 0 -288 96 Configuration
+l 100 0 0 -288 128 Dust Monitor
+r 0 -320 32 -64 192
+v 0 -64 160
+-32 160
+_
+v 0 -64 128
+-32 128
+_
+v 0 -64 64
+-32 64
+_
+[comments]

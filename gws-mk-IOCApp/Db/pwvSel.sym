@@ -1,0 +1,23 @@
+[symbol2]
+bbox -336 64 -32 224
+port -305 99 100 0 FLNK symbol 1 -321 95 0
+port -293 163 100 0 CSO symbol 1 -320 160 0
+port -304 196 100 0 IRMA symbol 1 -320 192 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 80 0 0 -231 159 Water Vapor Monitor
+l 100 0 0 -193 129 Interface
+r 0 -256 64 -32 224
+v 0 -321 95
+-257 95
+_
+v 0 -320 160
+-256 160
+_
+v 0 -320 192
+-256 192
+_
+[comments]

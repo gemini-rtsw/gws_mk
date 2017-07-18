@@ -1,0 +1,15 @@
+[symbol2]
+bbox 32 128 224 192
+port 163 165 100 0 DEBUG symbol 2 224 160 0
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 68 166 Debug
+l 100 0 0 58 140 Combine
+r 0 32 128 160 192
+v 0 160 160
+224 160
+_
+[comments]

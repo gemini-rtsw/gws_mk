@@ -1,0 +1,11 @@
+[symbol2]
+bbox -160 -32 64 224
+uniq 0
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -80 107 Serial
+l 100 0 0 -86 75 Bus # 2
+r 0 -160 -32 64 224
+[comments]

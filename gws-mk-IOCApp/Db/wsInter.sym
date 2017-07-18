@@ -1,0 +1,48 @@
+[symbol2]
+bbox -352 -160 -128 224
+port -336 -92 100 0 MESS symbol 1 -352 -96 0
+port -336 195 100 0 TEMP symbol 1 -352 192 0
+port -347 163 100 0 SPEED symbol 1 -352 160 0
+port -325 132 100 0 DIR symbol 1 -352 128 0
+port -347 99 100 0 PRESS symbol 1 -352 96 0
+port -347 66 100 0 HUMID symbol 1 -352 64 0
+port -335 36 100 0 HLTH symbol 1 -352 32 0
+port -334 -125 100 0 FLNK symbol 1 -352 -128 0
+port -334 -61 100 0 UPDT symbol 1 -352 -64 0
+uniq 1
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 -256 0 Interface
+l 100 0 0 -243 41 Station
+l 100 0 0 -243 85 Weather
+r 0 -288 -160 -128 224
+v 0 -352 -96
+-288 -96
+_
+v 0 -352 -128
+-288 -128
+_
+v 0 -352 64
+-288 64
+_
+v 0 -352 96
+-288 96
+_
+v 0 -352 128
+-288 128
+_
+v 0 -352 160
+-288 160
+_
+v 0 -352 192
+-288 192
+_
+v 0 -352 32
+-288 32
+_
+v 0 -352 -64
+-288 -64
+_
+[comments]
