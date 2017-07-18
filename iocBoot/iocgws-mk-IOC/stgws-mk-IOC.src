@@ -14,17 +14,21 @@ dbLoadRecords("db/iocAdminSoft.db"," IOC=ws:iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S
 
 # These were for testing with the socketservers
 
-drvAsynIPPortConfigure("QM", "172.17.5.19:10004")             
-drvAsynIPPortConfigure("DGHT", "172.17.5.46:3307")            
-drvAsynIPPortConfigure("YNGA", "172.17.5.46:3306")           
-drvAsynIPPortConfigure("VDL", "172.17.53.235:50000")        
-drvAsynIPPortConfigure("VHS", "172.17.56.10:23")        
-drvAsynIPPortConfigure("PLB", "172.17.5.47:3303")          
-drvAsynIPPortConfigure("PLT", "172.17.5.47:3302")         
-#drvAsynIPPortConfigure("PARTMON", "0.0.0.0:0000")        
-drvAsynIPPortConfigure("CFHT", "128.171.83.145:8912 HTTP") 
-drvAsynIPPortConfigure("UKIRT", "128.171.90.101:80 HTTP") 
-drvAsynIPPortConfigure("SEEMON", "172.17.2.157:80 HTTP") 
+# Temperature sensors
+drvAsynIPPortConfigure("DGHT", "10.2.2.19:5005")
+
+drvAsynIPPortConfigure("YNGA", "172.17.5.46:3306")
+# Ultrasonic anemometers & Vaisala humidity sensor
+drvAsynIPPortConfigure("VHS", "10.2.2.19:5001")
+# Particle monitor
+drvAsynIPPortConfigure("PARTMON", "10.2.2.19:5006")
+# Pier lab. barometric and temperature sensor
+drvAsynIPPortConfigure("PLT", "10.2.2.14:10001")
+drvAsynIPPortConfigure("PLB", "10.2.2.14:10002")
+# Vaisala Datalogger
+drvAsynIPPortConfigure("VDL", "10.2.16.10:50000")
+drvAsynIPPortConfigure("CFHT", "128.171.83.145:8912 HTTP")
+drvAsynIPPortConfigure("UKIRT", "128.171.90.101:80 HTTP")
 
 epicsEnvSet ("STREAM_PROTOCOL_PATH", "./db")
 

@@ -88,6 +88,7 @@ string $(top)health.HHSV	= "MAJOR";
 string $(top)metSetupSize	= "0.5 micron";
 long   $(top)metSize		= 1;
 string $(top)metSetupCad.B	= "60"; # seconds
+string $(top)metSetupCad.C	= "80"; # Scan size
 long   $(top)metTime		= 60;
 
 #
@@ -117,48 +118,48 @@ long $(top)metSetupSize.PROC	= 1;
 # Scaling factors for the CFHT weather station
 #
 double $(top)cfGs.L		= 1.0;		# temp
-double $(top)cfGs.M		= 0.51444;	# wind speed (knots -> m/s)
-double $(top)cfGs.N		= 1.0;		# wind direction
-double $(top)cfGs.O		= 1.0;		# pressure
-double $(top)cfGs.P		= 1.0;		# humidity
+double $(top)cfWindSpeedFact	= 0.51444;	# wind speed (knots -> m/s)
+double $(top)cfWindDirFact	= 1.0;		# wind direction
+double $(top)cfPressFact	= 1.0;		# pressure
+double $(top)cfHumidFact	= 1.0;		# humidity
 
 #
 # Scaling factors for the Pachon weather station
 #
-double $(top)cpGs.K		= 0.01;		# temp 20m
-double $(top)cpGs.L		= 0.01;		# temp 50m
-double $(top)cpGs.M		= 0.1;		# wind speed
-double $(top)cpGs.N		= 1.0;		# wind direction
-double $(top)cpGs.O		= 0.033864;	# pressure
-double $(top)cpGs.P		= 0.1;		# humidity
-double $(top)cpGs.Q		= 0.1;		# solar radiation
+#double $(top)cpnaFact		= 0.01;		# temp 20m
+#double $(top)cpTemp50mFact	= 0.01;		# temp 50m
+#double $(top)cpWindSpeedFact	= 0.1;		# wind speed
+#double $(top)cpWindDirFact	= 1.0;		# wind direction
+#double $(top)cpPressFact	= 0.033864;	# pressure
+#double $(top)cpHumidFact	= 0.1;		# humidity
+#double $(top)cpSolarFact	= 0.1;		# solar radiation
 
 #
 # Scaling factors for the CTIO weather station
 #
 double $(top)ctGs.L		= 1.0;		# temp
-double $(top)ctGs.M		= 0.44704;	# wind speed (mph -> m/s)
-double $(top)ctGs.N		= 1.0;		# wind direction
-double $(top)ctGs.O		= 1.0;		# pressure
-double $(top)ctGs.P		= 1.0;		# humidity
+double $(top)ctWindSpeedFact	= 0.44704;	# wind speed (mph -> m/s)
+double $(top)ctWindDirFact	= 1.0;		# wind direction
+double $(top)ctPressFact	= 1.0;		# pressure
+double $(top)ctHumidFact	= 1.0;		# humidity
 
 #
 # Scaling factors for the SOAR weather station
 #
-double $(top)srGs.L		= 1.0;		# temp
-double $(top)srGs.M		= 3.6;		# wind speed (km/hr -> m/s)
-double $(top)srGs.N		= 1.0;		# wind direction
-double $(top)srGs.O		= 1.0;		# pressure
-double $(top)srGs.P		= 1.0;		# humidity
+#double $(top)srGs.L		= 1.0;		# temp
+#double $(top)srWindSpeedFact	= 3.6;		# wind speed (km/hr -> m/s)
+#double $(top)srWindDirFact	= 1.0;		# wind direction
+#double $(top)srPressFact	= 1.0;		# pressure
+#double $(top)srHumidFact	= 1.0;		# humidity
 
 #
 # Scaling factors for the UKIRT weather station
 #
 double $(top)ukGs.L		= 1.0;		# temp
-double $(top)ukGs.M		= 0.44704;	# wind speed (mph -> m/s)
-double $(top)ukGs.N		= 1.0;		# wind direction
-double $(top)ukGs.O		= 1.0;		# pressure
-double $(top)ukGs.P		= 1.0;		# humidity
+double $(top)ukWindSpeedFact	= 0.44704;	# wind speed (mph -> m/s)
+double $(top)ukWindDirFact	= 1.0;		# wind direction
+double $(top)ukPressFact	= 1.0;		# pressure
+double $(top)ukHumidFact	= 1.0;		# humidity
 
 #---------------------------------------------------------------------
 # 	Weather station definitions (site dependent)
@@ -245,7 +246,7 @@ double $(top)ukHumid.HYST	= 0.0;
 #
 double $(top)cfGs.B		= 30;		# CFHT
 double $(top)ctGs.B		= 300;		# CTIO
-double $(top)srGs.B		= 300;		# SOAR
+#double $(top)srGs.B		= 300;		# SOAR
 double $(top)ukGs.B		= 60;		# UKIRT
 
 #
@@ -256,7 +257,7 @@ double $(top)ukGs.B		= 60;		# UKIRT
 # don't make sense.
 #
 long $(top)cfHb2Health.A	= 40;		# CFHT
-long $(top)cpHb2Health.A	= 15;		# Pachon
+#long $(top)cpHb2Health.A	= 15;		# Pachon
 long $(top)ctHb2Health.A	= 320;		# CTIO
 long $(top)srHb2Health.A	= 320;		# SOAR
 long $(top)ukHb2Health.A	= 320;		# UKIRT
@@ -265,7 +266,7 @@ long $(top)ukHb2Health.A	= 320;		# UKIRT
 # Disable flag for the Pachon weather station. Should be disabled on
 # Mauna-Kea to avoid unnecessary execution of records.
 #
-long $(top)cpWf.DISA		= 1;		# 0=enabled, 1=disabled
+long $(top)cpGetQualDataRaw.DISA	= 1;		# 0=enabled, 1=disabled
 
 #---------------------------------------------------------------------
 # 	Site monitoring definitions (site dependent)
@@ -275,9 +276,9 @@ long $(top)cpWf.DISA		= 1;		# 0=enabled, 1=disabled
 # Sampling time (seconds). The code does not allow for sampling
 # times less than 15 seconds.
 #
-double $(top)dimmGs.B		= 120;		# DIMM
-double $(top)massGs.B		= 120;		# MASS
-double $(top)irmaGs.B		= 120;		# IRMA
+#double $(top)dimmGs.B		= 120;		# DIMM
+#double $(top)massGs.B		= 120;		# MASS
+#double $(top)irmaGs.B		= 120;		# IRMA
 
 #
 # Health timeout (seconds). This time is used to decide when the device
