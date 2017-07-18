@@ -1,0 +1,449 @@
+#
+# pvload definition file for Mauna Kea
+#
+
+#---------------------------------------------------------------------
+# 	General definitions (site independent)
+#---------------------------------------------------------------------
+
+#
+# Software version
+#
+string $(top)version		= "V2-4";
+
+#
+# Clear all CADs
+#
+string $(top)debugCad.DIR	= "CLEAR";
+string $(top)simCad.DIR		= "CLEAR";
+string $(top)initCad.DIR	= "CLEAR";
+string $(top)bootCad.DIR	= "CLEAR";
+string $(top)wsSelCad.DIR	= "CLEAR";
+string $(top)metSetupCad.DIR	= "CLEAR";
+
+#
+# Set CAD alarms
+#
+string $(top)debugCad.ERSV	= "MAJOR";
+string $(top)initCad.ERSV	= "MAJOR";
+string $(top)bootCad.ERSV	= "MAJOR";
+string $(top)simCad.ERSV	= "MAJOR";
+string $(top)wsSelCad.ERSV	= "MAJOR";
+string $(top)metSetupCad.ERSV	= "MAJOR";
+
+#
+# Set simulation level & mode
+#
+long $(top)simMode		= "NONE";	# simulation mode to NONE
+long $(top)simMask		= 1;		# preset sim. mask to NONE
+long $(top)simLevel		= 0;		# sim. level to SIMM_NONE
+
+#
+# Set debug modes to NONE (should match macro definitions)
+#
+long $(top)debugMode		= "NONE";	# general
+long $(top)debugModeCf		= "NONE";	# CFHT
+long $(top)debugModeCp		= "NONE";	# PACHON
+long $(top)debugModeCt		= "NONE";	# CTIO
+long $(top)debugModeSr		= "NONE";	# SOAR
+long $(top)debugModeUk		= "NONE";	# UKIRT
+long $(top)debugModeDm		= "NONE";	# DIMM
+long $(top)debugModeMs		= "NONE";	# MASS
+long $(top)debugModeIr		= "NONE";	# IRMA
+long $(top)debugModeTs		= "NONE";	# Temperature sensors
+long $(top)debugModeUa		= "NONE";	# Ultrasonic anemometers
+long $(top)debugModeHs		= "NONE";	# Humidity sensor
+long $(top)debugModePm		= "NONE";	# Particle monitor
+
+#
+# Set debug levels to DBG_NONE (should match macro definitions)
+#
+long $(top)debugLevel		= 0;		# general
+long $(top)debugLevelCf		= 0;		# CFHT
+long $(top)debugLevelCp		= 0;		# PACHON
+long $(top)debugLevelCt		= 0;		# CTIO
+long $(top)debugLevelSr		= 0;		# SOAR
+long $(top)debugLevelUk		= 0;		# UKIRT
+long $(top)debugLevelDm		= 0;		# DIMM
+long $(top)debugLevelMs		= 0;		# MASS
+long $(top)debugLevelIr		= 0;		# IRMA
+long $(top)debugLevelTs		= 0;		# Temperature sensors
+long $(top)debugLevelUa		= 0;		# Ultrasonic anemometers
+long $(top)debugLevelHs		= 0;		# Humidity sensor
+long $(top)debugLevelPm		= 0;		# Particle monitor
+
+#
+# Health value and alarms
+#
+long   $(top)health		= 0;	# GOOD
+long   $(top)health.HIGH	= 1;	# WARNING
+string $(top)health.HSV		= "MINOR";
+long   $(top)health.HIHI	= 2;	# BAD or INVALID
+string $(top)health.HHSV	= "MAJOR";
+
+#
+# Set particle size and sampling time in seconds (should match
+# macro definitions). The size is a one indexed number.
+# 
+string $(top)metSetupSize	= "0.5 micron";
+long   $(top)metSize		= 1;
+string $(top)metSetupCad.B	= "60"; # seconds
+long   $(top)metTime		= 60;
+
+#
+# Process CAD records to preload values
+#
+long $(top)simMode.PROC		= 1;
+long $(top)debugMode.PROC	= 1;
+long $(top)debugModeCf.PROC	= 1;
+long $(top)debugModeCp.PROC	= 1;
+long $(top)debugModeCt.PROC	= 1;
+long $(top)debugModeSr.PROC	= 1;
+long $(top)debugModeUk.PROC	= 1;
+long $(top)debugModeDm.PROC	= 1;
+long $(top)debugModeMs.PROC	= 1;
+long $(top)debugModeIr.PROC	= 1;
+long $(top)debugModeTs.PROC	= 1;
+long $(top)debugModeUa.PROC	= 1;
+long $(top)debugModeHs.PROC	= 1;
+long $(top)debugModePm.PROC	= 1;
+long $(top)metSetupSize.PROC	= 1;
+
+#---------------------------------------------------------------------
+# 	Weather station definitions (site independent)
+#---------------------------------------------------------------------
+
+#
+# Scaling factors for the CFHT weather station
+#
+double $(top)cfGs.L		= 1.0;		# temp
+double $(top)cfGs.M		= 0.51444;	# wind speed (knots -> m/s)
+double $(top)cfGs.N		= 1.0;		# wind direction
+double $(top)cfGs.O		= 1.0;		# pressure
+double $(top)cfGs.P		= 1.0;		# humidity
+
+#
+# Scaling factors for the Pachon weather station
+#
+double $(top)cpGs.K		= 0.01;		# temp 20m
+double $(top)cpGs.L		= 0.01;		# temp 50m
+double $(top)cpGs.M		= 0.1;		# wind speed
+double $(top)cpGs.N		= 1.0;		# wind direction
+double $(top)cpGs.O		= 0.033864;	# pressure
+double $(top)cpGs.P		= 0.1;		# humidity
+double $(top)cpGs.Q		= 0.1;		# solar radiation
+
+#
+# Scaling factors for the CTIO weather station
+#
+double $(top)ctGs.L		= 1.0;		# temp
+double $(top)ctGs.M		= 0.44704;	# wind speed (mph -> m/s)
+double $(top)ctGs.N		= 1.0;		# wind direction
+double $(top)ctGs.O		= 1.0;		# pressure
+double $(top)ctGs.P		= 1.0;		# humidity
+
+#
+# Scaling factors for the SOAR weather station
+#
+double $(top)srGs.L		= 1.0;		# temp
+double $(top)srGs.M		= 3.6;		# wind speed (km/hr -> m/s)
+double $(top)srGs.N		= 1.0;		# wind direction
+double $(top)srGs.O		= 1.0;		# pressure
+double $(top)srGs.P		= 1.0;		# humidity
+
+#
+# Scaling factors for the UKIRT weather station
+#
+double $(top)ukGs.L		= 1.0;		# temp
+double $(top)ukGs.M		= 0.44704;	# wind speed (mph -> m/s)
+double $(top)ukGs.N		= 1.0;		# wind direction
+double $(top)ukGs.O		= 1.0;		# pressure
+double $(top)ukGs.P		= 1.0;		# humidity
+
+#---------------------------------------------------------------------
+# 	Weather station definitions (site dependent)
+#---------------------------------------------------------------------
+
+#
+# Weather station selection
+#
+long $(top)wsSelInput.ZRVL	= 0;		# WS_PACHON
+long $(top)wsSelInput.ZRST	= "PACHON";
+long $(top)wsSelInput.ONVL	= 1;		# WS_SOAR
+long $(top)wsSelInput.ONST	= "SOAR";
+long $(top)wsSelInput.TWVL	= 2;		# WS_CTIO
+long $(top)wsSelInput.TWST	= "CTIO";
+long $(top)wsSelInput.THVL	= 3;		# WS_CFHT
+long $(top)wsSelInput.THST	= "CFHT";
+long $(top)wsSelInput.FRVL	= 4;		# WS_UKIRT
+long $(top)wsSelInput.FRST	= "UKIRT";
+long $(top)wsSelInput		= 3;		# default to CFHT
+long $(top)wsSelCad.DIR		= "START";	# change station
+
+#
+# Weather station alarms
+#
+# CFHT alarms
+double $(top)wsWindSpeed.HIGH	= 10.0;		# warning
+string $(top)wsWindSpeed.HSV	= "MINOR";
+double $(top)wsWindSpeed.HIHI	= 20.0;		# close
+string $(top)wsWindSpeed.HHSV	= "MAJOR";
+double $(top)wsWindSpeed.HYST	= 0.0;
+
+double $(top)wsDewDiff.LOW	= 3.0;		# warning
+string $(top)wsDewDiff.LSV	= "MINOR";
+double $(top)wsDewDiff.LOLO	= 2.0;		# close
+string $(top)wsDewDiff.LLSV	= "MAJOR";
+double $(top)wsDewDiff.HYST	= 0.0;
+
+double $(top)wsPress.LOW	= 614.0;	# low
+string $(top)wsPress.LSV	= "MINOR";
+double $(top)wsPress.LOLO	= 610.0;	# even lower
+string $(top)wsPress.LLSV	= "MAJOR";
+double $(top)wsPress.HYST	= 0.0;
+
+double $(top)wsHumid.HIGH	= 80.0;		# warning
+string $(top)wsHumid.HSV	= "MINOR";
+double $(top)wsHumid.HIHI	= 85.0;		# close
+string $(top)wsHumid.HHSV	= "MAJOR";
+double $(top)wsHumid.HYST	= 0.0;
+
+# UKIRT alarms
+double $(top)ukWindSpeed.HIGH	= 10.0;		# warning
+string $(top)ukWindSpeed.HSV	= "MINOR";
+double $(top)ukWindSpeed.HIHI	= 20.0;		# close
+string $(top)ukWindSpeed.HHSV	= "MAJOR";
+double $(top)ukWindSpeed.HYST	= 0.0;
+
+double $(top)ukDewDiff.LOW	= 3.0;		# warning
+string $(top)ukDewDiff.LSV	= "MINOR";
+double $(top)ukDewDiff.LOLO	= 2.0;		# close
+string $(top)ukDewDiff.LLSV	= "MAJOR";
+double $(top)ukDewDiff.HYST	= 0.0;
+
+double $(top)ukPress.LOW	= 614.0;	# low
+string $(top)ukPress.LSV	= "MINOR";
+double $(top)ukPress.LOLO	= 610.0;	# even lower
+string $(top)ukPress.LLSV	= "MAJOR";
+double $(top)ukPress.HYST	= 0.0;
+
+double $(top)ukHumid.HIGH	= 80.0;		# warning
+string $(top)ukHumid.HSV	= "MINOR";
+double $(top)ukHumid.HIHI	= 85.0;		# close
+string $(top)ukHumid.HHSV	= "MAJOR";
+double $(top)ukHumid.HYST	= 0.0;
+
+
+#
+# Web weather station sampling times (seconds).
+# The code does not allow for sampling times less than 15 seconds.
+# In general local weather stations should be sampled more often.
+# Note: The UKIRT data is the average of the last 15 minutes so it
+# does not make sense to sample it too often.
+# Note: The Pachon weather station sends a continuous stream of data
+# every five seconds (set by the hardware).
+#
+double $(top)cfGs.B		= 30;		# CFHT
+double $(top)ctGs.B		= 300;		# CTIO
+double $(top)srGs.B		= 300;		# SOAR
+double $(top)ukGs.B		= 60;		# UKIRT
+
+#
+# Weather station health timeouts (seconds). This time should always
+# be greater than the sampling time above in order to work properly.
+# With the exception of the Pachon weather station, health is checked
+# every ten seconds in the code so increments of less than ten seconds
+# don't make sense.
+#
+long $(top)cfHb2Health.A	= 40;		# CFHT
+long $(top)cpHb2Health.A	= 15;		# Pachon
+long $(top)ctHb2Health.A	= 320;		# CTIO
+long $(top)srHb2Health.A	= 320;		# SOAR
+long $(top)ukHb2Health.A	= 320;		# UKIRT
+
+#
+# Disable flag for the Pachon weather station. Should be disabled on
+# Mauna-Kea to avoid unnecessary execution of records.
+#
+long $(top)cpWf.DISA		= 1;		# 0=enabled, 1=disabled
+
+#---------------------------------------------------------------------
+# 	Site monitoring definitions (site dependent)
+#---------------------------------------------------------------------
+
+#
+# Sampling time (seconds). The code does not allow for sampling
+# times less than 15 seconds.
+#
+double $(top)dimmGs.B		= 120;		# DIMM
+double $(top)massGs.B		= 120;		# MASS
+double $(top)irmaGs.B		= 120;		# IRMA
+
+#
+# Health timeout (seconds). This time is used to decide when the device
+# is not responding. It should always be greater than the sampling time
+# defined above, and should take into account network delays.
+#
+long $(top)dimmHb2Health.A	= 150;		# DIMM
+long $(top)massHb2Health.A	= 150;		# MASS
+long $(top)irmaHb2Health.A	= 150;		# IRMA
+
+#---------------------------------------------------------------------
+# 	Temperature sensor definitions (site dependent)
+#---------------------------------------------------------------------
+
+#
+# DGH temperature sensor enable/disable (0=enable, 1=disable)
+#
+long $(top)tpStLtMxRaw.DISA	= 0;	# surface, lower truss, -X
+long $(top)tpAtLtMxRaw.DISA	= 0;	# air,     lower truss, -X
+long $(top)tpStLtPxRaw.DISA	= 0;	# surface, lower truss, +X
+long $(top)tpAtLtPxRaw.DISA	= 0;	# air,     lower truss, +X
+
+long $(top)tpStMtMxRaw.DISA	= 0;	# surface, middle truss, -X
+long $(top)tpAtMtMxRaw.DISA	= 0;	# air,     middle truss, -X
+long $(top)tpStMtPxRaw.DISA	= 0;	# surface, middle truss, +X
+long $(top)tpAtMtPxRaw.DISA	= 0;	# air,     middle truss, +X
+
+long $(top)tpStTeMxRaw.DISA	= 0;	# surface, top end, -X
+long $(top)tpAtTeMxRaw.DISA	= 0;	# air,     top end, -X
+long $(top)tpStTePxRaw.DISA	= 0;	# surface, top end, +X
+long $(top)tpAtTePxRaw.DISA	= 0;	# air,     top end, +X
+
+long $(top)tpStSpMxRaw.DISA	= 0;	# surface, spider, -X
+long $(top)tpAtSpMxRaw.DISA	= 0;	# air,     spider, -X
+long $(top)tpStSpPxRaw.DISA	= 0;	# surface, spider, +X
+long $(top)tpAtSpPxRaw.DISA	= 0;	# air,     spider, +X
+
+long $(top)tpStSfUpRaw.DISA	= 1;	# surface, secondary frame, Up
+long $(top)tpStSfDnRaw.DISA	= 1;	# surface, secondary frame, Down
+
+long $(top)tpDGHNA1Raw.DISA	= 1;	# reserved for future use
+long $(top)tpDGHNA2Raw.DISA	= 1;	# reserved for future use
+
+#---------------------------------------------------------------------
+#	Humidity sensor definitions (site dependent)
+#---------------------------------------------------------------------
+
+#
+# Vaisala humidity sensor alarms
+#
+double $(top)tpHsPxDt.LOW	= 3.0;		# warning
+string $(top)tpHsPxDt.LSV	= "MINOR";
+double $(top)tpHsPxDt.LOLO	= 2.0;		# close
+string $(top)tpHsPxDt.LLSV	= "MAJOR";
+double $(top)tpHsPxDt.HYST	= 0.0;
+
+#
+# Vaisala humidity sensor enable/disable (0=enable, 1=disable)
+#
+long $(top)tpHsPxRaw.DISA	= 0;	# +X
+
+#---------------------------------------------------------------------
+#	Ultrasonic anemometer definitions (site dependent)
+#---------------------------------------------------------------------
+
+#
+# Young ultrasonic anemometer enable/disable (0=enable, 1=disable)
+#
+long $(top)tpUaMxRaw.DISA	= 0;	# -X
+long $(top)tpUaPxRaw.DISA	= 0;	# +X
+long $(top)tpUaTeRaw.DISA	= 0;	# top end
+
+#---------------------------------------------------------------------
+#	Particle monitor definitions (site dependent)
+#---------------------------------------------------------------------
+
+#
+# MetOne particle monitor enable/disable (0=enable, 1=disable)
+#
+long $(top)tpPmPxRaw.DISA	= 0;	# +X
+
+#---------------------------------------------------------------------
+# 	Pier lab sensors (site independent)
+#---------------------------------------------------------------------
+
+long $(top)plyngMRaw.DISA	= 0;	# TBC
+long $(top)pltAbPlRaw.DISA	= 0;	# TBC
+long $(top)pltAbAwPlRaw.DISA	= 0;	# TBC
+long $(top)pltFlPlRaw.DISA	= 0;	# TBC
+long $(top)pltAbOuPlRaw.DISA	= 0;	# TBC
+long $(top)plnaRaw.DISA		= 1;	# not used
+
+#---------------------------------------------------------------------
+#       Data Logger (site dependent)
+#---------------------------------------------------------------------
+
+#
+# Data logger enable/disable (0=enable, 1=disable)
+#
+long $(top)dlD1Raw.DISA = 0;
+
+#
+# Data logger alarms
+#
+double $(top)dlD1Press.LOW	= 614.0;	# low
+string $(top)dlD1Press.LSV	= "MINOR";
+double $(top)dlD1Press.LOLO	= 610.0;	# even lower
+string $(top)dlD1Press.LLSV	= "MAJOR";
+double $(top)dlD1Press.HYST	= 0.0;
+
+double $(top)dlD1Rh1.HIGH	= 80.0;		# warning
+string $(top)dlD1Rh1.HSV	= "MINOR";
+double $(top)dlD1Rh1.HIHI	= 85.0;		# close
+string $(top)dlD1Rh1.HHSV	= "MAJOR";
+double $(top)dlD1Rh1.HYST	= 0.0;
+
+double $(top)dlD1Rh2.HIGH	= 80.0;		# warning
+string $(top)dlD1Rh2.HSV	= "MINOR";
+double $(top)dlD1Rh2.HIHI	= 85.0;		# close
+string $(top)dlD1Rh2.HHSV	= "MAJOR";
+double $(top)dlD1Rh2.HYST	= 0.0;
+
+double $(top)dlD1DewDiff1.LOW	= 3.0;		# warning
+string $(top)dlD1DewDiff1.LSV	= "MINOR";
+double $(top)dlD1DewDiff1.LOLO	= 2.0;		# close
+string $(top)dlD1DewDiff1.LLSV	= "MAJOR";
+double $(top)dlD1DewDiff1.HYST	= 0.0;
+
+double $(top)dlD1DewDiff2.LOW	= 3.0;		# warning
+string $(top)dlD1DewDiff2.LSV	= "MINOR";
+double $(top)dlD1DewDiff2.LOLO	= 2.0;		# close
+string $(top)dlD1DewDiff2.LLSV	= "MAJOR";
+double $(top)dlD1DewDiff2.HYST	= 0.0;
+
+#---------------------------------------------------------------------
+# Environmental sensor sampling times (seconds)
+#---------------------------------------------------------------------
+
+long $(top)tp1TmrDelay		= 60;	# temperature sensors
+long $(top)tp2TmrDelay		= 1;	# anemometers
+long $(top)tp3TmrDelay		= 30;	# humidity sensor
+long $(top)tp4TmrDelay		= 80;	# particle monitor
+long $(top)pl1TmrDelay		= 60;	# pier lab (temperature)
+long $(top)pl2TmrDelay		= 60;	# pier lab (presure)
+long $(top)dl1TmrDelay		= 15;	# data logger
+
+#---------------------------------------------------------------------
+# Wind Direction zone limits (degrees)  
+#---------------------------------------------------------------------
+    
+double $(top)setWindDirAlarm.B = -1.0; # limit1 (-1: Ignore warning)
+double $(top)setWindDirAlarm.C = -1.0; # limit2 (-1: Ignore warning)
+double $(top)setWindDirAlarm.D = -1.0; # limit3 (-1: Ignore warning)
+double $(top)setWindDirAlarm.E = -1.0; # limit4 (-1: Ignore warning
+string $(top)setWindDirAlarm.VALA = "NO_ALARM";
+
+#---------------------------------------------------------------------
+# 	Ending definitions (site independent)
+#---------------------------------------------------------------------
+
+#
+# Set system state (should be previous to last in the file)
+# 
+long $(top)state		= 2;     	# RUNNING
+
+#
+# Set init CAR to IDLE (should be the last one in the file)
+#
+long $(top)initC.IVAL		= 0;		# IDLE
