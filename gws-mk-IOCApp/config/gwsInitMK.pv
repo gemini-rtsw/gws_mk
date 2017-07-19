@@ -137,11 +137,11 @@ double $(top)cfGs.P	= 1.0;		# humidity
 #
 # Scaling factors for the CTIO weather station
 #
-double $(top)ctGs.L		= 1.0;		# temp
-double $(top)ctGs.M	= 0.44704;	# wind speed (mph -> m/s)
-double $(top)ctGs.N	= 1.0;		# wind direction
-double $(top)ctGs.O	= 1.0;		# pressure
-double $(top)ctGs.P	= 1.0;		# humidity
+#double $(top)ctGs.L		= 1.0;		# temp
+#double $(top)ctGs.M	= 0.44704;	# wind speed (mph -> m/s)
+#double $(top)ctGs.N	= 1.0;		# wind direction
+#double $(top)ctGs.O	= 1.0;		# pressure
+#double $(top)ctGs.P	= 1.0;		# humidity
 
 #
 # Scaling factors for the SOAR weather station

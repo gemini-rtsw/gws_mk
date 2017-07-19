@@ -19,11 +19,11 @@ DB += gwsSadTop.db
 
 DB_INSTALLS += UKIRT.proto
 DB_INSTALLS += CFHT.proto
-DB_INSTALLS += monDimm.proto
-DB_INSTALLS += monMass.proto
+#DB_INSTALLS += monDimm.proto
+#DB_INSTALLS += monMass.proto
 DB_INSTALLS += wsDhg.proto
 DB_INSTALLS += wsYng.proto
-DB_INSTALLS += wsQualStation.proto
+#DB_INSTALLS += wsQualStation.proto
 DB_INSTALLS += wsVaisLog.proto
 DB_INSTALLS += wsVaisHum.proto
 DB_INSTALLS += wsPartMon.proto
