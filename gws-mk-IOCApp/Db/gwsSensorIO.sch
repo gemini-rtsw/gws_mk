@@ -104,4 +104,5 @@ p 1856 1536 100 0 -1 setyngta3:yngate C
 p 2016 1600 100 0 -1 setyngtd1:yngdmx 66
 p 2016 1568 100 0 -1 setyngtd2:yngdpx 65
 p 2016 1536 100 0 -1 setyngtd3:yngdte 67
+p 1696 1326 100 0 -1 set0:vaisala_protocol $(site_vaisala_p)
 [comments]

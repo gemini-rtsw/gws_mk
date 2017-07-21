@@ -2,7 +2,7 @@
 bbox -224 -32 128 224
 port 72 2 100 0 FLNK symbol 2 128 0 0
 port -224 6 100 0 SLNK symbol 1 -224 0 0
-uniq 0
+uniq 27
 [tools]
 [attributes]
 p 32 -64 100 0 1 setct:ct \r

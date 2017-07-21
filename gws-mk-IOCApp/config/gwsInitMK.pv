@@ -216,11 +216,11 @@ double $(top)ukWindSpeed.HIHI	= 20.0;		# close
 string $(top)ukWindSpeed.HHSV	= "MAJOR";
 double $(top)ukWindSpeed.HYST	= 0.0;
 
-double $(top)ukDewDiff.LOW	= 3.0;		# warning
-string $(top)ukDewDiff.LSV	= "MINOR";
-double $(top)ukDewDiff.LOLO	= 2.0;		# close
-string $(top)ukDewDiff.LLSV	= "MAJOR";
-double $(top)ukDewDiff.HYST	= 0.0;
+#double $(top)ukDewDiff.LOW	= 3.0;		# warning
+#string $(top)ukDewDiff.LSV	= "MINOR";
+#double $(top)ukDewDiff.LOLO	= 2.0;		# close
+#string $(top)ukDewDiff.LLSV	= "MAJOR";
+#double $(top)ukDewDiff.HYST	= 0.0;
 
 double $(top)ukPress.LOW	= 614.0;	# low
 string $(top)ukPress.LSV	= "MINOR";
@@ -245,7 +245,7 @@ double $(top)ukHumid.HYST	= 0.0;
 # every five seconds (set by the hardware).
 #
 double $(top)cfGs.B		= 30;		# CFHT
-double $(top)ctGs.B		= 300;		# CTIO
+#double $(top)ctGs.B		= 300;		# CTIO
 #double $(top)srGs.B		= 300;		# SOAR
 double $(top)ukGs.B		= 60;		# UKIRT
 
@@ -258,15 +258,15 @@ double $(top)ukGs.B		= 60;		# UKIRT
 #
 long $(top)cfHb2Health.A	= 40;		# CFHT
 #long $(top)cpHb2Health.A	= 15;		# Pachon
-long $(top)ctHb2Health.A	= 320;		# CTIO
-long $(top)srHb2Health.A	= 320;		# SOAR
+#long $(top)ctHb2Health.A	= 320;		# CTIO
+#long $(top)srHb2Health.A	= 320;		# SOAR
 long $(top)ukHb2Health.A	= 320;		# UKIRT
 
 #
 # Disable flag for the Pachon weather station. Should be disabled on
 # Mauna-Kea to avoid unnecessary execution of records.
 #
-long $(top)cpGetQualDataRaw.DISA	= 1;		# 0=enabled, 1=disabled
+#long $(top)cpGetQualDataRaw.DISA	= 1;		# 0=enabled, 1=disabled
 
 #---------------------------------------------------------------------
 # 	Site monitoring definitions (site dependent)
@@ -285,9 +285,9 @@ long $(top)cpGetQualDataRaw.DISA	= 1;		# 0=enabled, 1=disabled
 # is not responding. It should always be greater than the sampling time
 # defined above, and should take into account network delays.
 #
-long $(top)dimmHb2Health.A	= 150;		# DIMM
-long $(top)massHb2Health.A	= 150;		# MASS
-long $(top)irmaHb2Health.A	= 150;		# IRMA
+#long $(top)dimmHb2Health.A	= 150;		# DIMM
+#long $(top)massHb2Health.A	= 150;		# MASS
+#long $(top)irmaHb2Health.A	= 150;		# IRMA
 
 #---------------------------------------------------------------------
 # 	Temperature sensor definitions (site dependent)
@@ -364,7 +364,7 @@ long $(top)tpPmPxRaw.DISA	= 0;	# +X
 # 	Pier lab sensors (site independent)
 #---------------------------------------------------------------------
 
-long $(top)plyngMRaw.DISA	= 0;	# TBC
+#long $(top)plyngMRaw.DISA	= 0;	# TBC
 long $(top)pltAbPlRaw.DISA	= 0;	# TBC
 long $(top)pltAbAwPlRaw.DISA	= 0;	# TBC
 long $(top)pltFlPlRaw.DISA	= 0;	# TBC
@@ -418,8 +418,8 @@ double $(top)dlD1DewDiff2.HYST	= 0.0;
 #---------------------------------------------------------------------
 
 long $(top)tp1TmrDelay		= 60;	# temperature sensors
-long $(top)tp2TmrDelay		= 1;	# anemometers
-long $(top)tp3TmrDelay		= 30;	# humidity sensor
+long $(top)tp2TmrDelay		= 20;	# anemometers
+long $(top)tp3TmrDelay		= 60;	# humidity sensor
 long $(top)tp4TmrDelay		= 80;	# particle monitor
 long $(top)pl1TmrDelay		= 60;	# pier lab (temperature)
 long $(top)pl2TmrDelay		= 60;	# pier lab (presure)
