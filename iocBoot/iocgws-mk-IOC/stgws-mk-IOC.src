@@ -32,7 +32,7 @@ drvAsynIPPortConfigure("UKIRT", "${UKIRT_IP}:${UKIRT_PORT} HTTP")
 
 epicsEnvSet ("STREAM_PROTOCOL_PATH", "./db")
 
-dbLoadRecords("db/gwsTop.db", "top=ws:,ADDR=0,SCAN=10 second,ukirtip=${UKIRT_IP},site_vaisala_p=NoTdf")
+dbLoadRecords("db/gwsTop.db", "top=ws:,ADDR=0,SCAN=10 second,ukirtip=${UKIRT_IP},site_vaisala_p=${VAISALA_PROTO}")
 dbLoadRecords("db/gwsSadTop.db", "top=ws:")
 
 initSetParameters ("./data/gwsInitMK.pv", "top=ws:")

@@ -25,6 +25,7 @@ USR_BOOT_FLAGS =  -MCFHT_IP=128.171.83.145
 USR_BOOT_FLAGS += -MCFHT_PORT=8912
 USR_BOOT_FLAGS += -MUKIRT_IP=128.171.90.101
 USR_BOOT_FLAGS += -MUKIRT_PORT=80
+USR_BOOT_FLAGS += -MVAISALA_PROTO=NoTdf
 
 # Set this when you only want to compile this application
 #   for a subset of the cross-compiled target architectures
