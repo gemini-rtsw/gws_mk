@@ -25,22 +25,22 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 #SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
 #
 
-EPICS_RELEASE=R3.14.12.4
+EPICS_RELEASE=R3.14.12.6
 PROD_SUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
 WORK_SUPP=/gem_sw/work/$(EPICS_RELEASE)/support
 
-SNCSEQ=$(PROD_SUPP)/seq/2-2-3-1
-ASYN=$(PROD_SUPP)/asyn/4-29-1-1
-STREAM=$(PROD_SUPP)/StreamDevice/2-7-7-1
-PCRE=$(PROD_SUPP)/pcre/8-38-1
-STD=$(PROD_SUPP)/std/3-4-1
-IOCSTATS=$(PROD_SUPP)/iocStats/3-1-14-2
-GEMREC=$(PROD_SUPP)/geminiRec/4-1-5
-GEMUTIL=$(PROD_SUPP)/gemUtil/1-3
-WSWEB=$(PROD_SUPP)/wsWeb/1-8
-WSSENSOR=$(PROD_SUPP)/wsSensor/1-8
-SEEMON=$(PROD_SUPP)/seeingMonitors/1-4
-PVLOAD=$(PROD_SUPP)/pvload/1-1-1
+SNCSEQ=$(PROD_SUPP)/seq/2-2-3-1-BR314
+ASYN=$(PROD_SUPP)/asyn/4-29-1-1-BR314
+STREAM=$(PROD_SUPP)/StreamDevice/2-7-7-1-BR314
+PCRE=$(PROD_SUPP)/pcre/8-38-1-BR314
+STD=$(PROD_SUPP)/std/3-4-1-BR314
+IOCSTATS=$(PROD_SUPP)/iocStats/3-1-14-3-BR314
+GEMREC=$(PROD_SUPP)/geminiRec/4-1-5-BR314
+GEMUTIL=$(PROD_SUPP)/gemUtil/1-3-BR314-1
+WSWEB=$(PROD_SUPP)/wsWeb/1-8-BR314-1
+WSSENSOR=$(PROD_SUPP)/wsSensor/1-8-BR314
+SEEMON=$(PROD_SUPP)/seeingMonitors/1-4-BR314-1
+PVLOAD=$(PROD_SUPP)/pvload/1-1-1-BR314
 
 # EPICS_BASE usually appears last so other apps can override stuff:
 EPICS_BASE=/gem_sw/epics/$(EPICS_RELEASE)/base
