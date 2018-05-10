@@ -187,7 +187,7 @@ long $(top)wsSelCad.DIR		= "START";	# change station
 # CFHT alarms
 double $(top)wsWindSpeed.HIGH	= 10.0;		# warning
 string $(top)wsWindSpeed.HSV	= "MINOR";
-double $(top)wsWindSpeed.HIHI	= 20.0;		# close
+double $(top)wsWindSpeed.HIHI	= 22.4;		# close
 string $(top)wsWindSpeed.HHSV	= "MAJOR";
 double $(top)wsWindSpeed.HYST	= 0.0;
 
