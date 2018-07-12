@@ -264,7 +264,7 @@ long stateSir (struct sirRecord *psir)
 	long	state;
 	char	str[40];
 
-	state = atoi (psir->val);
+	state = *(long *) psir->val;
 
 	if (state == BOOTING)
 	    strcpy(str, "BOOTING");
@@ -277,7 +277,6 @@ long stateSir (struct sirRecord *psir)
 
 	/* Update output fields.
 	 */
-	strcpy (psir->val,  str);
 	strcpy (psir->imss, str);
 
 	return(0L);
