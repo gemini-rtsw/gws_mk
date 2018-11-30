@@ -185,6 +185,12 @@ long $(top)wsSelCad.DIR		= "START";	# change station
 # Weather station alarms
 #
 # CFHT alarms
+double $(top)wsTemp.LOW		= -5.0;		# warning
+string $(top)wsTemp.LSV		= "MINOR";
+double $(top)wsTemp.LOLO	= -8.0;		# close
+string $(top)wsTemp.LLSV	= "MAJOR";
+double $(top)wsTemp.HYST	= 0.0;
+
 double $(top)wsWindSpeed.HIGH	= 10.0;		# warning
 string $(top)wsWindSpeed.HSV	= "MINOR";
 double $(top)wsWindSpeed.HIHI	= 22.4;		# close
