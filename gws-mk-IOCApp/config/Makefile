@@ -4,7 +4,7 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
 # Configuration data files are installed in $TOP)/data
-DATA += gwsInitMK.pv
+# DATA += gwsInitMK.pv
 
 include $(TOP)/configure/RULES
 #----------------------------------------
