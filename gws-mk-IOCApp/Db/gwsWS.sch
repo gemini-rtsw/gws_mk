@@ -70,15 +70,13 @@ xform 0 2320 1952
 p 2287 1738 100 0 1 seta:wxsta UKIRT
 p 2199 1713 100 0 0 setd:debug Uk
 p 2282 1719 100 0 1 seti:src uk
-p 2162 2153 100 0 0 sets:
 p 2277 1698 100 0 1 set0:slope 0.44704
-p 2288 1677 100 0 1 set1:wxaddr $(ukirtip)
+p 2150 1766 100 0 0 set1:wxaddr xx
 use wsWeb 408 1735 100 0 wsWeb#453
 xform 0 504 1952
 p 474 1740 100 0 1 seta:wxsta CFHT
 p 392 1720 100 0 0 setd:debug Cf
 p 476 1724 100 0 1 seti:src cf
-p 346 2153 100 0 0 sets:
 p 469 1709 100 0 1 set0:slope 0.514444
 p 470 1690 100 0 0 set1:wxaddr xx
 use eseqs 1368 1703 100 0 eseqs#148

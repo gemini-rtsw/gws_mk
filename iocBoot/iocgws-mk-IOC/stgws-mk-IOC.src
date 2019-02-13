@@ -10,29 +10,12 @@ gws_mk_IOC_registerRecordDeviceDriver(pdbbase)
 ## Load record instances
 dbLoadRecords("db/iocAdminSoft.db"," IOC=ws:iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
 
+# Get IP numbers from configuration space.
+< /gemsoft/etc/common/rtconfig/gws/start_IPconfig
 
-# These were for testing with the socketservers
+epicsEnvSet ("STREAM_PROTOCOL_PATH", "/gemsoft/etc/common/rtconfig/gws")
 
-# Anemometers
-drvAsynIPPortConfigure("YNGA", "10.2.2.19:5001")
-# Ultrasonic anemometers & Vaisala humidity sensor
-drvAsynIPPortConfigure("VHS", "10.2.2.19:5002")
-# Temperature sensors
-drvAsynIPPortConfigure("DGHT", "10.2.2.19:5005")
-# Particle monitor
-drvAsynIPPortConfigure("PARTMON", "10.2.2.19:5006")
-
-# Pier lab. barometric and temperature sensor
-drvAsynIPPortConfigure("PLT", "10.2.2.14:10001")
-drvAsynIPPortConfigure("PLB", "10.2.2.14:10002")
-# Vaisala Datalogger
-drvAsynIPPortConfigure("VDL", "10.2.16.10:50000")
-drvAsynIPPortConfigure("CFHT", "${CFHT_IP}:${CFHT_PORT} HTTP")
-drvAsynIPPortConfigure("UKIRT", "${UKIRT_IP}:${UKIRT_PORT} HTTP")
-
-epicsEnvSet ("STREAM_PROTOCOL_PATH", "./db")
-
-dbLoadRecords("db/gwsTop.db", "top=ws:,ADDR=0,SCAN=10 second,ukirtip=${UKIRT_IP},site_vaisala_p=${VAISALA_PROTO}")
+dbLoadRecords("db/gwsTop.db", "top=ws:,ADDR=0,SCAN=10 second,site_vaisala_p=NoTdf")
 dbLoadRecords("db/gwsSadTop.db", "top=ws:")
 
 initSetParameters ("/gemsoft/etc/common/rtconfig/gws/gwsInitMK.pv", "top=ws:")
