@@ -1,0 +1,16 @@
+
+MK work: (to test compiled in my home dir with a simlink to /gem_sw/test/tcumming
+
+configure-ioc -t work \
+     -b /gem_sw/test/tcumming/ioc/gws/mk/bin/linux-x86_64/gws-mk-IOC \
+     -s /gem_sw/test/tcumming/ioc/gws/mk/bin/linux-x86_64/stgws-mk-IOC.boot gws-mk-IOC
+
+
+
+
+
+MK prod:
+
+configure-ioc -t prod \
+     -b /gem_sw/prod/R3.14.12.7/ioc/gws/mk/1-10/bin/linux-x86_64/gws-mk-ioc.boot \
+     -s /gem_sw/prod/R3.14.12.7/ioc/gws/mk/1-10/bin/linux-x86_64/stgws-mk-ioc.boot gws-mk-ioc

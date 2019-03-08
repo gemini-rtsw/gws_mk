@@ -11,18 +11,16 @@ gws_mk_IOC_registerRecordDeviceDriver(pdbbase)
 dbLoadRecords("db/iocAdminSoft.db"," IOC=ws:iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
 
 # Get IP numbers from configuration space.
-< /gemsoft/etc/common/rtconfig/gws/start_IPconfig
+< /gemsoft/etc/rtconfig/gws/start_IPconfig
 
-epicsEnvSet ("STREAM_PROTOCOL_PATH", "/gemsoft/etc/common/rtconfig/gws")
+epicsEnvSet ("STREAM_PROTOCOL_PATH", "/gemsoft/etc/rtconfig/gws")
 
 dbLoadRecords("db/gwsTop.db", "top=ws:,ADDR=0,SCAN=10 second,site_vaisala_p=NoTdf")
 dbLoadRecords("db/gwsSadTop.db", "top=ws:")
 
-initSetParameters ("/gemsoft/etc/common/rtconfig/gws/gwsInitMK.pv", "top=ws:")
-
 iocInit
+
+pvload "/gemsoft/etc/rtconfig/gws/gwsInitMK.pv", "top=ws:"
 
 ## Start any sequence programs
 #seq(sncxxx, "user=mrippa")
-
-pvload "/gemsoft/etc/common/rtconfig/gws/gwsInitMK.pv", "top=ws:"

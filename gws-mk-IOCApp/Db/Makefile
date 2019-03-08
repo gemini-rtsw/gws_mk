@@ -17,7 +17,10 @@ DEPSCHS = $(wildcard ../*.sch)
 DB += gwsTop.db 
 DB += gwsSadTop.db 
 
-# *.proto files come from /gemsoft/etc/common/rtconfig/gws
+# *.proto files come from /gem_sw/etc/rtconfig/gws
+
+DB_INSTALLS += iocAdminSoft.db
+DB_INSTALLS += asynRecord.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------
@@ -27,3 +30,4 @@ $(COMMON_DIR)/%.db: %.db
 
 clean::
 	$(RM) *.bak *.dat
+
