@@ -40,7 +40,7 @@
  * having yet another color rule in the user interface.
  */
 #define ALARM_NONE		0
-#define ALARM_WARNING		1
+#define ALARM_WARNING	1
 #define ALARM_ERROR		2
 
 /*
@@ -50,7 +50,7 @@
 #define SENSOR2_INPUT		*((long *) (pgsub->b))
 #define SENSOR3_INPUT		*((long *) (pgsub->c))
 #define SENSOR4_INPUT		*((long *) (pgsub->d))
-#define DEBUG_LEVEL		*((long *) (pgsub->j))
+#define DEBUG_LEVEL 		*((long *) (pgsub->j))
 
 /*
  * Output alarm states. Alarm states can be OK, WARNING or ERROR. The dm
@@ -60,6 +60,7 @@
 #define SENSOR2_ALARM		*((long *) (pgsub->valb))
 #define SENSOR3_ALARM		*((long *) (pgsub->valc))
 #define SENSOR4_ALARM		*((long *) (pgsub->vald))
+#define GLOBAL_ALARM		*((long *) (pgsub->vale))
 
 /*
  *+
@@ -79,7 +80,12 @@
  * Determine precipitation sensor alarms
  *
  * DESCRIPTION:
- * This routine is called from a "genSub" 
+ * This routine is called from a "genSub". It will set the individual sensor alarms
+ * to ALARM_NONE or ALARM_ERROR depending on whether the sensor is active or not.
+ * The global alarm will be set as follows:
+ * - no sensors active -> ALARM_NONE
+ * - less than three sensors active -> ALARM_WARNING
+ * - three or more sensors active -> ALARM_ERROR
  *
  * EPICS INPUT FIELDS:
  * (long) A	sensor 1 activation state
@@ -93,6 +99,7 @@
  * (long) VALB	alarm state for sensor 2
  * (long) VALC	alarm state for sensor 3
  * (long) VALD	alarm state for sensor 4
+ * (long) VALE	global alarm for all sensors
  *
  * EXTERNAL VARIABLES:
  * None
@@ -108,7 +115,7 @@ long precipitationAlarms (struct genSubRecord *pgsub)
 {
 	int	n, debug;
 	int	nactive = 0;
-	int	state[4], alarm[4];
+	int	state[4], alarm[5];
 
 	/*
 	 * Initialize record field pointers.
@@ -127,33 +134,33 @@ long precipitationAlarms (struct genSubRecord *pgsub)
 	state[3] = SENSOR4_INPUT;
 
 	/*
-	 * Count how many sensors are active. This has to be done
-	 * before evaluating the alarm for each sensor since they
-	 * depend on the total number of sensors active.
-	 */
-	for (n = 0; n < 4; n++) {
-	    if (state[n] == SENSOR_ENABLED)
-		nactive ++;
-	}
-
-	/*
-	 * Set up the alarms for each sersor based on the value of
-	 * the sensor and the number of sensors active.
+	 * Set up the alarms for each sersor.
 	 */
 	for (n = 0; n < 4; n++) {
 	    if (state[n] == SENSOR_ENABLED) {
-		if (nactive < 3)
-		    alarm[n] = ALARM_WARNING;
-		else
 		    alarm[n] = ALARM_ERROR;
 	    } else
-		alarm[n] = ALARM_NONE;
+            alarm[n] = ALARM_NONE;
 	}
 
+	/*
+	 * Count how many sensors are active and set the global alarm.
+	 */
+	for (n = 0; n < 4; n++) {
+	    if (state[n] == SENSOR_ENABLED)
+            nactive ++;
+	}
+    if (nactive == 0)
+        alarm[4] = ALARM_NONE;
+    else if (nactive < 3)
+        alarm[4] = ALARM_WARNING;
+    else
+        alarm[4] = ALARM_ERROR;
+
 	if (DEBUG_FULL) {
-	    errlogPrintf("precipitationAlarms: nactive=%d\n", nactive);
+	    errlogPrintf("precipitationAlarms: nactive=%d, global=%d\n", nactive, alarm[4]);
 	    for (n = 0; n <4; n++)
-		errlogPrintf("  %d: state=%d, alarm=%d\n", n, state[n], alarm[n]);
+            errlogPrintf("  %d: state=%d, alarm=%d\n", n, state[n], alarm[n]);
 	}
 
 	/*
@@ -163,6 +170,7 @@ long precipitationAlarms (struct genSubRecord *pgsub)
 	SENSOR2_ALARM = alarm[1];
 	SENSOR3_ALARM = alarm[2];
 	SENSOR4_ALARM = alarm[3];
+	GLOBAL_ALARM  = alarm[4];
 
 	return (0L);
 }

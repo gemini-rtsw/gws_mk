@@ -1,30 +1,34 @@
 [schematic2]
-uniq 54
+uniq 23
 [tools]
 [detail]
-w 984 283 100 0 n#53 eaos.eaos#49.FLNK 1152 224 1216 224 1216 272 800 272 800 384 896 384 eaos.eaos#48.SLNK
-w 984 667 100 0 n#52 eaos.eaos#47.FLNK 1152 608 1216 608 1216 656 800 656 800 768 896 768 eaos.eaos#46.SLNK
-w 984 475 100 0 n#51 eaos.eaos#48.FLNK 1152 416 1216 416 1216 464 800 464 800 576 896 576 eaos.eaos#47.SLNK
-w -456 155 100 0 n#41 hwin.hwin#39.in -512 144 -352 144 ebis.ebis#4.INP
-w -456 379 100 0 n#40 hwin.hwin#38.in -512 368 -352 368 ebis.ebis#3.INP
-w -456 603 100 0 n#36 hwin.hwin#37.in -512 592 -352 592 ebis.ebis#2.INP
-w -512 747 100 0 SLNK inhier.SLNK.P -544 736 -432 736 -432 784 -352 784 ebis.ebis#0.SLNK
-w -456 827 100 0 n#33 hwin.hwin#32.in -512 816 -352 816 ebis.ebis#0.INP
-w 24 139 100 0 n#31 ebis.ebis#4.FLNK -96 128 192 128 192 96 288 96 egenSub.egenSub#5.SLNK
-w 776 235 100 0 n#29 egenSub.egenSub#5.VALD 576 608 704 608 704 224 896 224 eaos.eaos#49.DOL
-w 632 683 100 0 n#28 egenSub.egenSub#5.VALC 576 672 736 672 736 416 896 416 eaos.eaos#48.DOL
-w 648 747 100 0 n#27 egenSub.egenSub#5.VALB 576 736 768 736 768 608 896 608 eaos.eaos#47.DOL
-w 648 75 100 0 n#18 egenSub.egenSub#5.FLNK 576 64 768 64 768 192 896 192 eaos.eaos#49.SLNK
-w 712 811 100 0 n#17 egenSub.egenSub#5.VALA 576 800 896 800 eaos.eaos#46.DOL
-w -8 107 100 0 n#12 ebis.ebis#4.VAL -96 96 128 96 128 576 288 576 egenSub.egenSub#5.INPD
-w -24 331 100 0 n#11 ebis.ebis#3.VAL -96 320 96 320 96 640 288 640 egenSub.egenSub#5.INPC
-w 152 715 100 0 n#10 ebis.ebis#2.VAL -96 544 64 544 64 704 288 704 egenSub.egenSub#5.INPB
-w 78 779 100 0 n#9 ebis.ebis#0.VAL -96 768 288 768 egenSub.egenSub#5.INPA
-w -258 203 100 0 n#8 ebis.ebis#3.FLNK -96 352 0 352 0 192 -480 192 -480 112 -352 112 ebis.ebis#4.SLNK
-w -258 427 100 0 n#7 ebis.ebis#2.FLNK -96 576 0 576 0 416 -480 416 -480 336 -352 336 ebis.ebis#3.SLNK
-w -258 651 100 0 n#6 ebis.ebis#0.FLNK -96 800 0 800 0 640 -480 640 -480 560 -352 560 ebis.ebis#2.SLNK
+w 1184 227 100 0 n#1 eaos.eaos#49.FLNK 1152 224 1216 224 1216 272 800 272 800 384 896 384 eaos.eaos#48.SLNK
+w 1184 611 100 0 n#2 eaos.eaos#47.FLNK 1152 608 1216 608 1216 656 800 656 800 768 896 768 eaos.eaos#46.SLNK
+w 1184 419 100 0 n#3 eaos.eaos#48.FLNK 1152 416 1216 416 1216 464 800 464 800 576 896 576 eaos.eaos#47.SLNK
+w -432 147 100 0 n#4 hwin.hwin#39.in -512 144 -352 144 ebis.ebis#4.INP
+w -432 371 100 0 n#5 hwin.hwin#38.in -512 368 -352 368 ebis.ebis#3.INP
+w -432 595 100 0 n#6 hwin.hwin#37.in -512 592 -352 592 ebis.ebis#2.INP
+w -488 739 100 0 SLNK inhier.SLNK.P -544 736 -432 736 -432 784 -352 784 ebis.ebis#0.SLNK
+w -432 819 100 0 n#7 hwin.hwin#32.in -512 816 -352 816 ebis.ebis#0.INP
+w 48 131 100 0 n#8 ebis.ebis#4.FLNK -96 128 192 128 192 96 288 96 egenSub.egenSub#5.SLNK
+w 640 611 100 0 n#9 egenSub.egenSub#5.VALD 576 608 704 608 704 224 896 224 eaos.eaos#49.DOL
+w 656 675 100 0 n#10 egenSub.egenSub#5.VALC 576 672 736 672 736 416 896 416 eaos.eaos#48.DOL
+w 672 739 100 0 n#11 egenSub.egenSub#5.VALB 576 736 768 736 768 608 896 608 eaos.eaos#47.DOL
+w 736 803 100 0 n#12 egenSub.egenSub#5.VALA 576 800 896 800 eaos.eaos#46.DOL
+w 16 99 100 0 n#13 ebis.ebis#4.VAL -96 96 128 96 128 576 288 576 egenSub.egenSub#5.INPD
+w 0 323 100 0 n#14 ebis.ebis#3.VAL -96 320 96 320 96 640 288 640 egenSub.egenSub#5.INPC
+w -16 547 100 0 n#15 ebis.ebis#2.VAL -96 544 64 544 64 704 288 704 egenSub.egenSub#5.INPB
+w 96 771 100 0 n#16 ebis.ebis#0.VAL -96 768 288 768 egenSub.egenSub#5.INPA
+w -48 355 100 0 n#17 ebis.ebis#3.FLNK -96 352 0 352 0 192 -480 192 -480 112 -352 112 ebis.ebis#4.SLNK
+w -48 579 100 0 n#18 ebis.ebis#2.FLNK -96 576 0 576 0 416 -480 416 -480 336 -352 336 ebis.ebis#3.SLNK
+w -48 803 100 0 n#19 ebis.ebis#0.FLNK -96 800 0 800 0 640 -480 640 -480 560 -352 560 ebis.ebis#2.SLNK
+w 624 547 100 0 n#20 egenSub.egenSub#5.VALE 576 544 672 544 672 32 896 32 eaos.eaos#50.DOL
+w 1162 42 -100 0 n#21 eaos.eaos#50.FLNK 1152 32 1184 32 1184 32 1216 32 1216 80 800 80 800 192 896 192 eaos.eaos#49.SLNK
+w 586 74 -100 0 n#22 egenSub.egenSub#5.FLNK 576 64 608 64 608 0 896 0 eaos.eaos#50.SLNK
 s -944 -64 100 0 These records were used to simulate the precipitation sensors when they were not available
 [cell use]
+use bb200tr -1088 -536 -100 0 frame
+xform 0 192 288
 use eaos 896 103 100 0 eaos#49
 xform 0 1024 192
 p 640 174 100 0 0 OMSL:closed_loop
@@ -107,6 +111,9 @@ p 368 560 100 0 1 FTVC:LONG
 p 368 528 100 0 1 FTVD:LONG
 p 288 -32 100 0 1 SNAM:precipitationAlarms
 p 400 0 100 1024 -1 name:$(top)$(dev)Alarms
-use bb200tr -1088 -536 -100 0 frame
-xform 0 192 288
+p 370 500 100 0 1 FTVE:LONG
+use eaos 896 -64 100 0 eaos#50
+xform 0 1024 0
+p 640 -18 100 0 0 OMSL:closed_loop
+p 1008 -96 100 1024 -1 name:$(top)$(dev)AlarmAll
 [comments]
