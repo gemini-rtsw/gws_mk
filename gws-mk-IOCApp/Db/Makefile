@@ -19,7 +19,7 @@ DB += gwsSadTop.db
 
 # *.proto files come from /gem_sw/etc/rtconfig/gws
 
-DB_INSTALLS += asynRecord.db
+#DB_INSTALLS += asynRecord.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------
