@@ -150,12 +150,13 @@ long precipitationAlarms (struct genSubRecord *pgsub)
 	    if (state[n] == SENSOR_ENABLED)
             nactive ++;
 	}
-    if (nactive == 0)
+    if (nactive == 0) {
         alarm[4] = ALARM_NONE;
-    else if (nactive < 3)
+    } else if (nactive < 3) {
         alarm[4] = ALARM_WARNING;
-    else
+    } else {
         alarm[4] = ALARM_ERROR;
+    }
 
 	if (DEBUG_FULL) {
 	    errlogPrintf("precipitationAlarms: nactive=%d, global=%d\n", nactive, alarm[4]);
