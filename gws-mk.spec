@@ -34,14 +34,6 @@ AutoReqProv: no
 %description
 This is the %{name} soft IOC.
 
-## If you want to have a devel-package to be generated uncomment the following:
-#%package devel
-#Summary: %{name}-devel Package
-#Group: Development/Gemini
-#Requires: %{name} tdct sequencer-devel bancomm-devel geminiRec-devel timelib-devel slalib-devel xycom-devel gemUtil-devel timeProbe-devel pvload-devel tcslib-devel astlib-devel tptlib-devel
-#%description devel
-#This is the module %{name}.
-
 %prep
 %setup -q 
 
@@ -75,13 +67,11 @@ rm -rf $RPM_BUILD_ROOT
    /%{_prefix}/%{name}/bin
    /%{_prefix}/%{name}/db
    /%{_prefix}/%{name}/dbd
-   #/%{_prefix}/%{name}/data
    /%{_prefix}/%{name}/lib
    /%{_prefix}/%{name}/configure
 
 #%files devel
 #%defattr(-,root,root)
-#  /%{_prefix}/%{name}/include
 
 %changelog
 * Mon May 16 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
