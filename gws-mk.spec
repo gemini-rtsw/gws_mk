@@ -18,7 +18,7 @@
 
 Summary: %{name} Package, a module for EPICS base
 Name: %{name}
-Version: 1.0
+Version: 1.1
 Release: 1%{?dist}
 License: EPICS Open License
 Group: Applications/Engineering
@@ -86,3 +86,5 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Mon May 16 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
 - Created specfile
+* Mon May 23 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
+- Updated version
