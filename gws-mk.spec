@@ -74,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 #%defattr(-,root,root)
 
 %changelog
-* Mon May 16 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
-- Created specfile
 * Mon May 23 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
 - Updated version
+* Mon May 16 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
+- Created specfile
