@@ -1,7 +1,9 @@
 [schematic2]
-uniq 1
+uniq 3
 [tools]
 [detail]
+w 19 51 100 0 n#1 hwin.hwin#11.in 16 48 16 48 ecalcouts.ecalcouts#10.INPA
+w 26 -6 -100 0 n#2 hwin.hwin#12.in 16 -16 16 -16 ecalcouts.ecalcouts#10.INPC
 s 464 480 100 0 Humidity
 s 144 480 100 0 Anemometers
 s 608 272 100 0 Annex
@@ -41,4 +43,15 @@ xform 0 -80 384
 p -192 224 100 0 1 seta:port DGHT
 p -192 192 100 0 1 setb:bus 1
 p -192 160 100 0 1 setd:dev tp
+use ecalcouts 16 -112 100 0 ecalcouts#10
+xform 0 176 -16
+p 80 -136 100 0 1 name:$(top)dustHumidity
+p 88 -104 100 0 1 CALC:((A > 10) && (C > 70))
+p 104 96 100 0 1 SCAN:.5 second
+use hwin -176 32 100 0 hwin#11
+xform 0 -80 48
+p -220 64 100 0 -1 val(in):ws:tpPmPxChan8
+use hwin -176 -32 100 0 hwin#12
+xform 0 -80 -16
+p -217 0 100 0 -1 val(in):ws:dlD1Rh1
 [comments]
