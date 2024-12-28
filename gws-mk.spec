@@ -27,7 +27,7 @@ ExclusiveArch: %{arch}
 Prefix: %{_prefix}
 ## You may specify dependencies here
 BuildRequires: epics-base-devel re2c tdct geminiRec-devel gemUtil-devel timeProbe-devel pvload-devel wsSensors wsWeb seeingMonitors-devel asyn-devel streamdevice-devel
-Requires: epics-base sequencer geminiRec gemUtil timeProbe pvload procServ conserver conserver-client wsSensors wsWeb seeingMonitors asyn streamdevice
+Requires: epics-base sequencer geminiRec gemUtil timeProbe pvload procServ conserver conserver-client wsSensors wsWeb seeingMonitors asyn streamdevice procServ-conserver
 ## Switch dependency checking off
 AutoReqProv: no
 
@@ -42,7 +42,7 @@ This is the %{name} soft IOC.
 #source /gem_base/etc/profile
 #start virtual framebuffer to have graphics for java
 #Xvfb :1  -ac -nolisten tcp -nolisten unix &
-
+source /etc/profile
 make distclean uninstall
 make
 
@@ -59,6 +59,24 @@ cp -r lib $RPM_BUILD_ROOT/%{_prefix}/%{name}
 cp -r configure $RPM_BUILD_ROOT/%{_prefix}/%{name}
 find $RPM_BUILD_ROOT/%{_prefix}/%{name}/configure -name ".git" -exec rm -rf {} \;
 
+%post
+# install service file and reload, disable the service
+cp -f %{_prefix}/%{name}/data/procserv-%{name}.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl disable procserv-%{name}.service
+
+%preun
+# disable and stop the service before uninstalling
+systemctl disable procserv-%{name}.service
+systemctl stop procserv-%{name}.service
+
+%postun
+# remove the service file and reload if not upgrading
+if [ "$1" == "0" ]; then
+    rm -f /etc/systemd/system/procserv-%{name}.service
+    systemctl daemon-reload
+fi
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -74,6 +92,8 @@ rm -rf $RPM_BUILD_ROOT
 #%defattr(-,root,root)
 
 %changelog
+* Fri Dec 27 2024 Anthony Sylvester <anthony.sylvester@noirlab.edu>
+- Updated to match CP version added post, preun, postun steps
 * Mon May 23 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
 - Updated version
 * Mon May 16 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
