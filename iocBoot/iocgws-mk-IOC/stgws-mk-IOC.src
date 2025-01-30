@@ -1,6 +1,6 @@
-$(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/gws-mk-IOC
+$(LINUX_ONLY)#!/gem_base/epics/ioc/gws_mk/bin/linux-x86_64/gws-mk-IOC
 
-cd ${INSTALL}
+cd /gem_base/epics/ioc/gws_mk
 epicsEnvSet("IOCSH_PS1","gws-mk-ioc> ")
 
 ## Register all support components
@@ -8,7 +8,7 @@ dbLoadDatabase("dbd/gws-mk-IOC.dbd")
 gws_mk_IOC_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
-dbLoadRecords("db/iocAdminSoft.db"," IOC=ws:iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
+#dbLoadRecords("db/iocAdminSoft.db"," IOC=ws:iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
 
 # Get IP numbers from configuration space.
 < /gemsoft/etc/rtconfig/gws/start_IPconfig

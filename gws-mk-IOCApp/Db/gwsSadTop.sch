@@ -11,6 +11,6 @@ use ba200tr -640 -456 -100 0 frame
 xform 0 160 168
 use gwsSad 96 151 100 0 gwsSad#1
 xform 0 160 264
-p 64 144 100 0 1 seta:top ws:sad:
-p 64 112 100 0 1 setb:ws ws:
+p 64 144 100 0 1 seta:top $(top):sad:
+p 64 112 100 0 1 setb:ws $(top)
 [comments]
