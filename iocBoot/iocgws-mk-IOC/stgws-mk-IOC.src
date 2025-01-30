@@ -15,12 +15,12 @@ dbLoadRecords("db/iocAdminSoft.db"," IOC=ws:iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S
 
 epicsEnvSet ("STREAM_PROTOCOL_PATH", "/gemsoft/etc/rtconfig/gws")
 
-dbLoadRecords("db/gwsTop.db", "top=ws:,ADDR=0,SCAN=10 second,site_vaisala_p=NoTdf")
-dbLoadRecords("db/gwsSadTop.db", "top=ws:")
+dbLoadRecords("db/gwsTop.db", "top=tws:,ADDR=0,SCAN=10 second,site_vaisala_p=NoTdf")
+dbLoadRecords("db/gwsSadTop.db", "top=tws:")
 
 iocInit
 
-pvload "/gemsoft/etc/rtconfig/gws/gwsInitMK.pv", "top=ws:"
+pvload "/gemsoft/etc/rtconfig/gws/gwsInitMK.pv", "top=tws:"
 
 ## Start any sequence programs
 #seq(sncxxx, "user=mrippa")
