@@ -50,8 +50,8 @@ p 88 -104 100 0 1 CALC:((A > 10) && (C > 70))
 p 104 96 100 0 1 SCAN:.5 second
 use hwin -176 32 100 0 hwin#11
 xform 0 -80 48
-p -220 64 100 0 -1 val(in):$(top)tpPmPxChan8
+p -220 64 100 0 -1 val(in):tws:tpPmPxChan8
 use hwin -176 -32 100 0 hwin#12
 xform 0 -80 -16
-p -217 0 100 0 -1 val(in):$(top)dlD1Rh1
+p -217 0 100 0 -1 val(in):tws:dlD1Rh1
 [comments]
