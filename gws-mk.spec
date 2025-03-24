@@ -34,6 +34,17 @@ AutoReqProv: no
 %description
 This is the %{name} soft IOC.
 
+%package devel
+Summary: Development files for %{name}
+Group: Applications/Engineering
+Requires: %{name} = %{version}-%{release}
+Requires: epics-base-devel geminiRec-devel gemUtil-devel timeProbe-devel pvload-devel seeingMonitors-devel asyn-devel streamdevice-devel
+AutoReqProv: no
+
+%description devel
+Development files for the %{name} module, including header files and libraries
+needed for developing applications that use %{name}.
+
 %prep
 %setup -q 
 
@@ -89,8 +100,8 @@ rm -rf $RPM_BUILD_ROOT
    /%{_prefix}/%{name}/configure
    /%{_prefix}/%{name}/data
 
-#%files devel
-#%defattr(-,root,root)
+%files devel
+%defattr(-,root,root)
 
 %changelog
 * Fri Dec 27 2024 Anthony Sylvester <anthony.sylvester@noirlab.edu>
@@ -100,3 +111,5 @@ rm -rf $RPM_BUILD_ROOT
 - Updated version
 * Mon May 16 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
 - Created specfile
+* Fri Jun 7 2024 Hawi Stecher <hawi.stecher@noirlab.edu>
+- Enabled devel package with include files
