@@ -104,12 +104,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 
 %changelog
-* Fri Dec 27 2024 Anthony Sylvester <anthony.sylvester@noirlab.edu>
+* Fri Jun 7 2024 Hawi Stecher <hawi.stecher@noirlab.edu>
+- Enabled devel package with include files
+* Fri Dec 27 2023 Anthony Sylvester <anthony.sylvester@noirlab.edu>
 - Updated to match CP version added post, preun, postun steps
 - Uncommented cp data directory
 * Mon May 23 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
 - Updated version
 * Mon May 16 2022 Pedro Gigoux <pedro.gigoux@noirlab.edu>
 - Created specfile
-* Fri Jun 7 2024 Hawi Stecher <hawi.stecher@noirlab.edu>
-- Enabled devel package with include files
