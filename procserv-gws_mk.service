@@ -1,0 +1,21 @@
+[Unit]
+Description=procServ for gws_mk
+After=network.target remote-fs.target
+ConditionPathIsDirectory=/gem_base/epics/ioc/gws_mk
+
+[Service]
+Type=simple
+Environment="LD_LIBRARY_PATH=:/gem_base/epics/ioc/gws_mk/lib/linux-x86_64"
+Environment="EPICS_CA_AUTO_ADDR_LIST=NO"
+Environment="EPICS_CA_ADDR_LIST=10.2.2.255"
+ExecStart=/bin/procServ --foreground --logfile /gemsoft/var/log/gws/gws.log --name gws_mk --ignore ^D^C^] --logoutcmd ^D --chdir /gem_base/epics/ioc/gws_mk --info-file /run/procserv-gws_mk/info --port 1235 --allow /gem_base/epics/ioc/gws_mk/bin/linux-x86_64/stgws-mk-IOC.boot
+RuntimeDirectory=procserv-gws_mk
+StandardOutput=syslog
+StandardError=inherit
+SyslogIdentifier=procserv-gws_mk
+
+User=software
+Group=gemini
+
+[Install]
+WantedBy=multi-user.target
