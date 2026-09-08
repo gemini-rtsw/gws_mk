@@ -18,20 +18,19 @@ gws-mk-IOC_DBD += base.dbd
 gws-mk-IOC_DBD += devAsynOctet.dbd
 gws-mk-IOC_DBD += hb2health.dbd
 gws-mk-IOC_DBD += asyn.dbd
-gws-mk-IOC_DBD += stream.dbd
+gws-mk-IOC_DBD += streamApp.dbd
 gws-mk-IOC_DBD += drvAsynIPPort.dbd
 gws-mk-IOC_DBD += geminiRecords.dbd
 gws-mk-IOC_DBD += gws.dbd
-gws-mk-IOC_DBD += iocAdmin.dbd    
 gws-mk-IOC_DBD += pvload.dbd    
 
 # Add all the support libraries used by this IOC
+gws-mk-IOC_LIBS += calc
 gws-mk-IOC_LIBS += stream
 gws-mk-IOC_LIBS += pcre
 gws-mk-IOC_LIBS += asyn
 gws-mk-IOC_LIBS += geminiRecords
 gws-mk-IOC_LIBS += hb2health
-gws-mk-IOC_LIBS += devIocStats        
 gws-mk-IOC_LIBS += pvload        
 
 # gws-mk-IOC_registerRecordDeviceDriver.cpp derives from gws-mk-IOC.dbd

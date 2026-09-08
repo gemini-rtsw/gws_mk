@@ -903,7 +903,7 @@ long wsSelCad (struct cadRecord *pcad)
 		status = CAD_ACCEPT;
 	    } else {
 		sprintf (pcad->mess,
-		    "Argument must be PACHON, SOAR, CTIO, CFHT or UKIRT\n");
+		    "Must be PACHON|SOAR|CTIO|CFHT|UKIRT\n");
 		status = CAD_REJECT;
 	    }
 	    break;
@@ -1040,7 +1040,7 @@ long metSetupCad (struct cadRecord *pcad)
 
 	    if (scan < sample) {
 		sprintf (pcad->mess,
-		    "Sampling time must less than the scan time %d",
+		    "Sampling time must < the scan time %d",
 		    scan);
 		status = CAD_REJECT;
 	    }

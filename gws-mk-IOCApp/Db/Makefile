@@ -19,8 +19,7 @@ DB += gwsSadTop.db
 
 # *.proto files come from /gem_sw/etc/rtconfig/gws
 
-DB_INSTALLS += iocAdminSoft.db
-DB_INSTALLS += asynRecord.db
+#DB_INSTALLS += asynRecord.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------
@@ -28,6 +27,6 @@ include $(TOP)/configure/RULES
 $(COMMON_DIR)/%.db: %.db
 	cp $< $@
 
-clean::
+clean:
 	$(RM) *.bak *.dat
 

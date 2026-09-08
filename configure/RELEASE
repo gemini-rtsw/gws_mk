@@ -21,32 +21,37 @@
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
-# If using the sequencer, point SNCSEQ at its top directory:
-#SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
-#
+PRODSUPP=/gem_base/epics/support
 
-EPICS_RELEASE=R3.14.12.8
-PROD_SUPP=/gem_sw/prod/$(EPICS_RELEASE)/support
-WORK_SUPP=/gem_sw/work/$(EPICS_RELEASE)/support
-
-SNCSEQ=$(PROD_SUPP)/seq/2-2-5-3
-ASYN=$(PROD_SUPP)/asyn/4-34-1
-STD=$(PROD_SUPP)/std/3-4-3
-IOCSTATS=$(PROD_SUPP)/iocStats/3-1-16-5
-STREAM=$(PROD_SUPP)/StreamDevice/2-7-7-3
-PCRE=$(PROD_SUPP)/pcre/8-38-3
-GEMREC=$(PROD_SUPP)/geminiRec/4-1-9
-GEMUTIL=$(PROD_SUPP)/gemUtil/1-11
-WSWEB=$(PROD_SUPP)/wsWeb/1-11
-WSSENSOR=$(PROD_SUPP)/wsSensor/1-12
-SEEMON=$(PROD_SUPP)/seeingMonitors/1-8
-
-PVLOAD=$(PROD_SUPP)/pvload/1-1-4
+SNCSEQ=$(PRODSUPP)/sequencer
+GEMREC=$(PRODSUPP)/geminiRec
+PVLOAD=$(PRODSUPP)/pvload
+GEMUTILS=$(PRODSUPP)/gemUtil
+ASYN=$(PRODSUPP)/asyn
+STD=$(PRODSUPP)/std
+STREAM=$(PRODSUPP)/streamdevice
+PCRE=$(PRODSUPP)/geminipcre
+CALC=$(PRODSUPP)/geminicalc
+WSWEB=$(PRODSUPP)/wsWeb
+WSSENSOR=$(PRODSUPP)/wsSensor
+SEEMON=$(PRODSUPP)/seeingMonitors
 
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/gem_sw/epics/$(EPICS_RELEASE)/base
+EPICS_BASE=/gem_base/epics/epics-base
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:
 #RULES=/path/to/epics/support/module/rules/x-y
+
+# include local RELEASE configuration file (this will be ignored by with
+# .gitignore to keep it local and prevent poisoning the default build 
+# scheme)
+# overwrite configuration from above with this file and do not edit
+# this one
+#
+# These lines allow developers to override these RELEASE settings
+# without having to modify this file directly.
+-include $(TOP)/../RELEASE.local
+-include $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local
+-include $(TOP)/configure/RELEASE.local

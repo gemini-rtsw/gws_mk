@@ -19,5 +19,5 @@ p 192 304 100 0 1 setf:INIT 1
 p 192 272 100 0 1 setg:RUN 2
 p 192 240 100 0 1 seth:BUSY 2
 p 192 208 100 0 1 seti:IDLE 0
-p -6 332 100 0 1 set0:top ws:
+p -6 332 100 0 1 set0:top tws:
 [comments]
