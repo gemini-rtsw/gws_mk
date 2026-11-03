@@ -27,22 +27,24 @@ Source0: %{name}-%{version}.tar.gz
 ExclusiveArch: %{arch}
 Prefix: %{_prefix}
 ## You may specify dependencies here
-# Pin every BuildRequires exactly with %{?dist} (rpm-repo is flat el8+el9).
-# Pins below are taken from ecs_mk's green build; the loose ones get pinned
-# from the "BUILD DEPENDENCY VERSIONS (pin these)" block of this repo's first build.
-BuildRequires: re2c
-BuildRequires: tdct
-BuildRequires: epics-base-devel = 7.0.7-0.git.054b1d4%{?dist}
-BuildRequires: sequencer-devel  = 2.2.9.e5e3615-4.git.33e0208%{?dist}
-BuildRequires: geminiRec-devel  = 4.1.13-3.git.5dcd2db%{?dist}
-BuildRequires: gemUtil-devel    = 1.6.13-2.git.cd2bab4%{?dist}
-BuildRequires: pvload-devel     = 1.2.1-7.git.a70cb64%{?dist}
-BuildRequires: timeProbe-devel
-BuildRequires: wsSensors
-BuildRequires: wsWeb
-BuildRequires: seeingMonitors-devel
-BuildRequires: asyn-devel
-BuildRequires: streamdevice-devel
+# Pin every BuildRequires exactly with %{?dist} (rpm-repo is flat el8+el9;
+# an unpinned dep can resolve to .el9 -- timeProbe-devel and tdct did in the
+# first GitHub build). Values = what build 702da78 resolved, with the .el8
+# build of the same NVR where it had picked .el9. asyn and streamdevice
+# have no dist tag in rpm-repo, so they are pinned without %{?dist}.
+BuildRequires: re2c                 = 0.14.3-2%{?dist}
+BuildRequires: tdct                 = 2.18.6-5%{?dist}
+BuildRequires: epics-base-devel     = 7.0.7-0.git.054b1d4%{?dist}
+BuildRequires: sequencer-devel      = 2.2.9.e5e3615-4.git.33e0208%{?dist}
+BuildRequires: geminiRec-devel      = 4.1.13-3.git.5dcd2db%{?dist}
+BuildRequires: gemUtil-devel        = 1.6.13-2.git.cd2bab4%{?dist}
+BuildRequires: pvload-devel         = 1.2.1-7.git.a70cb64%{?dist}
+BuildRequires: timeProbe-devel      = 1.1.16-3.git.712092b%{?dist}
+BuildRequires: wsSensors            = 1.1.1-7.git.51.8027bcf%{?dist}
+BuildRequires: wsWeb                = 1.1.1-7.git.42.beb517a%{?dist}
+BuildRequires: seeingMonitors-devel = 0.2-1.git.52.f85ddbc%{?dist}
+BuildRequires: asyn-devel           = 4.44-1
+BuildRequires: streamdevice-devel   = 2.8.22-0.git.8.181f91d
 Requires: epics-base sequencer geminiRec gemUtil timeProbe pvload procServ conserver conserver-client wsSensors wsWeb seeingMonitors asyn streamdevice procServ-conserver
 ## Switch dependency checking off
 AutoReqProv: no
