@@ -3,7 +3,8 @@
 %define repository gemdev
 %define debug_package %{nil}
 %define arch %(uname -m)
-%define checkout %(git log --pretty=format:'%h' -n 1) 
+# $GIT_HASH is passed in by build_rpm.sh; git is only the fallback.
+%define checkout %(if [ -n "$GIT_HASH" ]; then echo "$GIT_HASH"; else git rev-parse --short HEAD 2>/dev/null || echo nogit; fi)
 
 #These global defines are added to prevent stripping
 # symbols on vxWorks cross-compiled code
@@ -19,14 +20,29 @@
 Summary: %{name} Package, a module for EPICS base
 Name: %{name}
 Version: 1.1
-Release: 1%{?dist}
+Release: 2.git.%{checkout}%{?dist}
 License: EPICS Open License
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
 ExclusiveArch: %{arch}
 Prefix: %{_prefix}
 ## You may specify dependencies here
-BuildRequires: epics-base-devel re2c tdct geminiRec-devel gemUtil-devel timeProbe-devel pvload-devel wsSensors wsWeb seeingMonitors-devel asyn-devel streamdevice-devel
+# Pin every BuildRequires exactly with %{?dist} (rpm-repo is flat el8+el9).
+# Pins below are taken from ecs_mk's green build; the loose ones get pinned
+# from the "BUILD DEPENDENCY VERSIONS (pin these)" block of this repo's first build.
+BuildRequires: re2c
+BuildRequires: tdct
+BuildRequires: epics-base-devel = 7.0.7-0.git.054b1d4%{?dist}
+BuildRequires: sequencer-devel  = 2.2.9.e5e3615-4.git.33e0208%{?dist}
+BuildRequires: geminiRec-devel  = 4.1.13-3.git.5dcd2db%{?dist}
+BuildRequires: gemUtil-devel    = 1.6.13-2.git.cd2bab4%{?dist}
+BuildRequires: pvload-devel     = 1.2.1-7.git.a70cb64%{?dist}
+BuildRequires: timeProbe-devel
+BuildRequires: wsSensors
+BuildRequires: wsWeb
+BuildRequires: seeingMonitors-devel
+BuildRequires: asyn-devel
+BuildRequires: streamdevice-devel
 Requires: epics-base sequencer geminiRec gemUtil timeProbe pvload procServ conserver conserver-client wsSensors wsWeb seeingMonitors asyn streamdevice procServ-conserver
 ## Switch dependency checking off
 AutoReqProv: no
@@ -53,7 +69,7 @@ needed for developing applications that use %{name}.
 #source /gem_base/etc/profile
 #start virtual framebuffer to have graphics for java
 #Xvfb :1  -ac -nolisten tcp -nolisten unix &
-source /etc/profile
+source /gem_base/etc/profile
 make distclean uninstall
 make
 
@@ -104,6 +120,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 
 %changelog
+* Mon Nov 02 2026 Hawi Stecher <hawi.stecher@noirlab.edu> - 1.1-2
+- Moved from GitLab to GitHub gemini-rtsw-ci pipeline; git-hash release, pinned BuildRequires.
 * Fri Jun 7 2024 Hawi Stecher <hawi.stecher@noirlab.edu>
 - Enabled devel package with include files
 * Fri Dec 27 2023 Anthony Sylvester <anthony.sylvester@noirlab.edu>
